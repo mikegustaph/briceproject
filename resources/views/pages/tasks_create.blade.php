@@ -1,90 +1,209 @@
-@extends('layouts.main')
+@extends('dashboard')
 @section('content')
-    <div class="content-wrapper">
-        <div class="page-header">
-            <h3 class="page-title"> Create Task </h3>
-            <div class="col-sm-6">
-                @if ($errors->any())
-                    <div id="error-message" class="alert alert-fill-danger alert-dismissible" role="alert">
-                        <ul id="error-message" class="alert alert-fill-danger alert-dismissible" role="alert">
-                            @foreach ($errors->all() as $error)
-                                <li><strong>Oohps! </strong>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                        <script>
-                            $(document).ready(function() {
-                                setTimeout(function() {
-                                    //$('#flash-message').fadeOut('slow');
-                                    $('#error-message').fadeOut('slow');
-                                }, 5000); // Adjust the timeout value (in milliseconds) as needed
-                            });
-                        </script>
-                    </div>
-                @endif
-                @if (session('success'))
-                    <div id="flash-message" class="alert alert-fill-success alert-dismissible" role="alert">
-                        {{ session('success') }}
-                    </div>
-                    <script>
-                        $(document).ready(function() {
-                            setTimeout(function() {
-                                $('#flash-message').fadeOut('slow');
-                                $('#error-message').fadeOut('slow');
-                            }, 5000); // Adjust the timeout value (in milliseconds) as needed
-                        });
-                    </script>
-                @endif
-            </div>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Task</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Create Task</li>
-                </ol>
-            </nav>
-        </div>
-        <!--Row-->
-        <div class="row ">
-            <div class="col-12 grid-margin">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Add new task</h4>
-                        <form action="{{ url('/task/task_create') }}" method="POST" class="forms-sample"
-                            enctype="multipart/form-data">
-                            @csrf
-
-                            <div class="form-group">
-                                <label for="exampleInputName1"> Task Name</label>
-                                <input type="text" style="color: white;" name="taskname" class="form-control"
-                                    id="exampleInputName1" placeholder="Task name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleSelectGender" class="col-form-label"> Assign To</label>
-                                <div class="">
-                                    <select style="color: #6C7293;" name="assignto" class="form-control"
-                                        id="exampleSelectGender">
-                                        @foreach ($users as $user)
-                                            @if ($user->role_id === 0)
-                                                <option value="{{ $user->id }}">{{ $user->first_name }}</option>
-                                            @endif
-                                        @endforeach
-                                    </select>
+    <!--begin::App-->
+    <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+        <!--begin::Page-->
+        <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+            <!--begin::Header-->
+            @include('layouts._header')
+            <!--end::Header-->
+            <!--begin::Wrapper-->
+            <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+                <!--begin::Sidebar-->
+                @include('layouts._sidebar')
+                <!--end::Sidebar-->
+                <!--begin::Main-->
+                <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+                    <!--begin::Content wrapper-->
+                    <div class="d-flex flex-column flex-column-fluid">
+                        <!--begin::Toolbar-->
+                        <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+                            <!--begin::Toolbar container-->
+                            <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+                                <!--begin::Page title-->
+                                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+                                    <!--begin::Title-->
+                                    <h1
+                                        class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">
+                                        New Task</h1>
+                                    <!--end::Title-->
+                                    <!--begin::Breadcrumb-->
+                                    <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+                                        <!--begin::Item-->
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="index.html" class="text-muted text-hover-primary">Home</a>
+                                        </li>
+                                        <!--end::Item-->
+                                        <!--begin::Item-->
+                                        <li class="breadcrumb-item">
+                                            <span class="bullet bg-gray-500 w-5px h-2px"></span>
+                                        </li>
+                                        <!--end::Item-->
+                                        <!--begin::Item-->
+                                        <li class="breadcrumb-item text-muted">Task</li>
+                                        <li class="breadcrumb-item">
+                                            <span class="bullet bg-gray-500 w-5px h-2px"></span>
+                                        </li>
+                                        <li class="breadcrumb-item text-muted">New Task</li>
+                                        <!--end::Item-->
+                                    </ul>
+                                    <!--end::Breadcrumb-->
                                 </div>
+                                <div style="background-color: rgb(67, 67, 67);"
+                                    class="page-title d-flex flex-column flex-wrap me-3">
+                                    @if (session('success'))
+                                        <div id="flash-message" class="alert alert-fill-success alert-dismissible"
+                                            role="alert">
+                                            {{ session('success') }}
+                                        </div>
+                                        <script>
+                                            $(document).ready(function() {
+                                                setTimeout(function() {
+                                                    $('#flash-message').fadeOut('slow');
+                                                    $('#error-message').fadeOut('slow');
+                                                }, 5000); // Adjust the timeout value (in milliseconds) as needed
+                                            });
+                                        </script>
+                                    @endif
+                                </div>
+                                <!--end::Page title-->
+                                <!--begin::Action-->
                             </div>
-                            <div class="form-group">
-                                <label for="exampleInputName1"> Date</label>
-                                <input type="date" style="color: white;" name="taskdate" class="form-control"
-                                    id="exampleInputName1" required>
+                            <!--end::Toolbar container-->
+                        </div>
+                        <!--end::Toolbar-->
+                        <!--begin::Content-->
+                        <div id="kt_app_content" class="app-content flex-column-fluid">
+                            <!--begin::Content container-->
+                            <div id="kt_app_content_container" class="app-container container-xxl">
+                                <!--begin::Card-->
+                                <!--start::Content-->
+                                <div class="card mb-5 mb-xl-10">
+                                    <!--begin::Content-->
+                                    <div id="kt_account_settings_profile_details" class="collapse show">
+                                        <!--begin::Form-->
+                                        <form id="kt_account_profile_details_form" class="form" method="POST"
+                                            action="{{ url('/privacy-policy') }}">
+                                            @csrf
+                                            <!--begin::Card body-->
+                                            <div class="card-body p-9">
+                                                <!--begin::Input group-->
+                                                <div class="row mb-6">
+                                                    <!--begin::Label-->
+                                                    <label class="col-lg-4 col-form-label fw-semibold fs-6">
+                                                        <span class="required">Task Name</span>
+                                                        <span class="ms-1" data-bs-toggle="tooltip"
+                                                            title="Define role name">
+                                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                <span class="path1"></span>
+                                                                <span class="path2"></span>
+                                                                <span class="path3"></span>
+                                                            </i>
+                                                        </span>
+                                                    </label>
+                                                    <!--end::Label-->
+                                                    <!--begin::Col-->
+                                                    <div class="col-lg-8 fv-row">
+                                                        <input type="text" name="name"
+                                                            class="form-control form-control-lg form-control-solid"
+                                                            placeholder="Taks Name" required />
+                                                    </div>
+                                                    <!--end::Col-->
+                                                </div>
+                                                <!--end::Input group-->
+                                                <div class="row mb-6">
+                                                    <!--begin::Label-->
+                                                    <label class="col-lg-4 col-form-label fw-semibold fs-6">
+                                                        <span class="required">Staff Name</span>
+                                                        <span class="ms-1" data-bs-toggle="tooltip"
+                                                            title="Define role name">
+                                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                <span class="path1"></span>
+                                                                <span class="path2"></span>
+                                                                <span class="path3"></span>
+                                                            </i>
+                                                        </span>
+                                                    </label>
+                                                    <!--end::Label-->
+                                                    <!--begin::Col-->
+                                                    <div class="col-lg-8 fv-row">
+                                                        <input type="text" name="username"
+                                                            class="form-control form-control-lg form-control-solid"
+                                                            placeholder="Staff Name" required />
+                                                    </div>
+                                                    <!--end::Col-->
+                                                </div>
+                                                <!--end::Input group-->
+
+                                                <!--begin::Input group-->
+                                                <div class="row mb-6">
+                                                    <!--begin::Label-->
+                                                    <label class="col-lg-4 col-form-label fw-semibold fs-6">
+                                                        <span class="required">Note </span>
+                                                        <span class="ms-1" data-bs-toggle="tooltip"
+                                                            title="Write a description ">
+                                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                <span class="path1"></span>
+                                                                <span class="path2"></span>
+                                                                <span class="path3"></span>
+                                                            </i>
+                                                        </span>
+                                                    </label>
+                                                    <!--end::Label-->
+                                                    <!--begin::Col-->
+                                                    <div class="col-lg-8 fv-row">
+                                                        <textarea type="text" name="description" class="form-control form-control-lg form-control-solid" placeholder="Note"></textarea>
+                                                    </div>
+                                                    <!--end::Col-->
+                                                </div>
+                                                <!--end::Input group-->
+                                            </div>
+                                            <!--end::Card body-->
+                                            <!--begin::Actions-->
+                                            <div class="card-footer d-flex justify-content-end py-6 px-9">
+                                                <button type="reset"
+                                                    class="btn btn-light btn-active-light-primary me-2">Discard</button>
+                                                <button type="submit" class="btn btn-primary"
+                                                    id="kt_account_profile_details_submit">Save Changes</button>
+                                            </div>
+                                            <!--end::Actions-->
+                                        </form>
+                                        <!--end::Form-->
+                                    </div>
+                                    <!--end::Content-->
+                                </div>
+                                <!--end::Content Container-->
+                                <!--end::Modals-->
                             </div>
-                            <div class="form-group">
-                                <label for="exampleInputName1"> Note</label>
-                                <textarea type="text" style="color: white;" name="tasknote" rows="23" class="form-control"
-                                    id="exampleInputName1"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary me-2">Submit</button>
-                        </form>
+                            <!--end::Content container-->
+                        </div>
+                        <!--end::Content-->
                     </div>
+                    <!--end::Content wrapper-->
+                    <!--begin::Footer-->
+                    @include('layouts._footer')
+                    <!--end::Footer-->
                 </div>
+                <!--end:::Main-->
             </div>
+            <!--end::Wrapper-->
         </div>
+        <!--end::Page-->
     </div>
+    <!--end::App-->
+    <!--begin::Drawers-->
+    @include('widget.drawer')
+    <!--end::Drawers-->
+    <!--begin::Scrolltop-->
+    <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
+        <i class="ki-duotone ki-arrow-up">
+            <span class="path1"></span>
+            <span class="path2"></span>
+        </i>
+    </div>
+    <!--end::Scrolltop-->
+    <!--begin::Modals-->
+    @include('widget.modal')
+    <!--end::Modal - Invite Friend-->
+    @include('scripts._createuser_script')
 @endsection

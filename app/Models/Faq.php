@@ -11,11 +11,10 @@ class Faq extends Model
 
     protected $primarykey = 'id';
 
-    protected $table = 'faqs';
+    protected $table = 'faq';
 
     protected $fillable = [
-        'created_by',
         'title',
-        'faqs_text',
+        'description',
     ];
 }

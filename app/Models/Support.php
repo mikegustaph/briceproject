@@ -11,7 +11,7 @@ class Support extends Model
 
     protected $primarykey = 'id';
 
-    protected $table = 'supports';
+    protected $table = 'support';
 
     protected $fillable = [
         'title',

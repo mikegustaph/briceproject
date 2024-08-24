@@ -1,14 +1,8 @@
 <?php
 
-use App\Http\Controllers\API\V1\AppAboutController;
-use App\Http\Controllers\API\V1\AppFaqController;
-use App\Http\Controllers\API\V1\AppPrivacyController;
-use App\Http\Controllers\API\V1\AppSupportController;
-use App\Http\Controllers\API\V1\AppWhychooseController;
-use App\Http\Controllers\API\V1\AppAuthController;
-use App\Http\Controllers\API\V1\CustomerController;
-use App\Http\Controllers\API\V1\DisclosureController;
-use App\Http\Controllers\API\V1\MainAppSettingController;
+use App\Http\Controllers\API\AppManageApiController;
+use App\Http\Controllers\LoanMangementController;
+use App\Http\Controllers\OtpController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,16 +21,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::prefix('v1')->group(function () {
-
-    //Route::resource('disclosures', DisclosureController::class);
-    /*Route::resource('privacy', AppPrivacyController::class,);
-    Route::resource('whychoose', AppWhychooseController::class);
-    Route::resource('faq', AppFaqController::class);
-    Route::resource('about', AppAboutController::class);
-    Route::resource('support', AppSupportController::class);
-    Route::resource('customer', CustomerController::class);*/
-    Route::get('/disclosures', [DisclosureController::class, 'disclosure']);
-    Route::post('/verify_phone', [AppAuthController::class, 'verifyphone']);
-    Route::post('/sent_', [AppAuthController::class, 'sendOtp']);
-    Route::post('/register_for_loan', [AppAuthController::class, 'customerregister']);
+    Route::get('/privacypolicy', [AppManageApiController::class, 'privacyPolicy']);
+    Route::get('/disclosure', [AppManageApiController::class, 'Disclosure']);
+    Route::get('/whychooseus', [AppManageApiController::class, 'whyChooseus']);
+    Route::get('/faq', [AppManageApiController::class, 'Faq']);
+    Route::get('/aboutus', [AppManageApiController::class, 'AboutUs']);
+    Route::get('/support', [AppManageApiController::class, 'Support']);
+    Route::post('/send-otp', [OtpController::class, 'sendOtp']);
+    Route::post('/test-otp', [OtpController::class, 'sendOtpNow']);
+    Route::get('/applogin', [LoanMangementController::class, 'appLoginByPhone']);
 });

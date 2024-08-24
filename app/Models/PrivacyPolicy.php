@@ -11,12 +11,11 @@ class PrivacyPolicy extends Model
 
     protected $primarykey = 'id';
 
-    protected $table = 'privacy_policies';
+    protected $table = 'privacy_policy';
 
     protected $fillable = [
-        'created_by',
         'title',
-        'content',
+        'description',
     ];
 
     public function user()

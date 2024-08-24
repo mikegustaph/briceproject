@@ -11,11 +11,10 @@ class Disclosure extends Model
 
     protected $primarykey = 'id';
 
-    protected $table = 'disclosures';
+    protected $table = 'disclosure';
 
     protected $fillable = [
-        'created_by',
-        'name',
-        'disclosure_text',
+        'title',
+        'description',
     ];
 }
