@@ -88,7 +88,7 @@
                                                     <!--end::Label-->
                                                     <!--begin::Col-->
                                                     <div class="col-lg-8 fv-row">
-                                                        <input type="text" name="disclosure"
+                                                        <input type="text" name="name"
                                                             class="form-control form-control-lg form-control-solid"
                                                             placeholder="Disclosure Name" value="{{ $discloed->title }}" />
                                                     </div>
@@ -112,8 +112,8 @@
                                                     <!--end::Label-->
                                                     <!--begin::Col-->
                                                     <div class="col-lg-8 fv-row">
-                                                        <textarea type="text" name="description" class="form-control form-control-lg form-control-solid"
-                                                            placeholder="Disclosure Description"></textarea>
+                                                        <textarea id="description" type="text" name="description" maxlength="2000" rows="15"
+                                                            class="form-control form-control-lg form-control-solid" placeholder="Disclosure Description"></textarea>
                                                     </div>
                                                     <!--end::Col-->
                                                 </div>
@@ -167,5 +167,54 @@
     <!--begin::Modals-->
     @include('widget.modal')
     <!--end::Modal - Invite Friend-->
+    <script>
+        /*tinymce.init({
+                    selector: 'textarea[name="description"]',
+                    plugins: 'lists link image code table preview',
+                    toolbar: 'undo redo | styleselect | bold italic underline | alignleft aligncenter alignright | bullist numlist outdent indent | link image | preview code',
+                    menubar: false,
+                    height: 300,
+                    branding: false
+                });*/
+    </script>
+    <script>
+        // Initialize CKEditor
+        CKEDITOR.replace('description', {
+            height: 300,
+            toolbar: [{
+                    name: 'clipboard',
+                    items: ['Cut', 'Copy', 'Paste', 'Undo', 'Redo']
+                },
+                {
+                    name: 'editing',
+                    items: ['Find', 'Replace', '-', 'SelectAll']
+                },
+                {
+                    name: 'basicstyles',
+                    items: ['Bold', 'Italic', 'Underline', 'Strike', '-', 'RemoveFormat']
+                },
+                {
+                    name: 'paragraph',
+                    items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft',
+                        'JustifyCenter', 'JustifyRight'
+                    ]
+                },
+                {
+                    name: 'links',
+                    items: ['Link', 'Unlink']
+                },
+                {
+                    name: 'insert',
+                    items: ['Image', 'Table', 'HorizontalRule', 'SpecialChar']
+                },
+                {
+                    name: 'tools',
+                    items: ['Maximize']
+                }
+            ]
+        });
+    </script>
+    <script src="https://cdn.ckeditor.com/4.20.1/standard/ckeditor.js"></script>
+
     @include('scripts._createuser_script')
 @endsection

@@ -112,8 +112,8 @@
                                                     <!--end::Label-->
                                                     <!--begin::Col-->
                                                     <div class="col-lg-8 fv-row">
-                                                        <textarea type="text" name="description" class="form-control form-control-lg form-control-solid"
-                                                            placeholder="Disclosure Description"></textarea>
+                                                        <textarea type="text" name="description" maxlength="2000" rows="15" name="description"
+                                                            class="form-control form-control-lg form-control-solid" placeholder="Disclosure Description"></textarea>
                                                     </div>
                                                     <!--end::Col-->
                                                 </div>
@@ -165,6 +165,17 @@
     </div>
     <!--end::Scrolltop-->
     <!--begin::Modals-->
+    <script>
+        tinymce.init({
+            selector: 'textarea[name="description"]',
+            plugins: 'lists link image code table preview',
+            toolbar: 'undo redo | styleselect | bold italic underline | alignleft aligncenter alignright | bullist numlist outdent indent | link image | preview code',
+            menubar: false,
+            height: 300,
+            branding: false
+        });
+    </script>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     @include('widget.modal')
     <!--end::Modal - Invite Friend-->
     @include('scripts._createuser_script')

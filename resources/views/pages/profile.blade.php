@@ -24,7 +24,7 @@
                                     <!--begin::Title-->
                                     <h1
                                         class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">
-                                        Profile Settings</h1>
+                                        Overview</h1>
                                     <!--end::Title-->
                                     <!--begin::Breadcrumb-->
                                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -39,7 +39,7 @@
                                         </li>
                                         <!--end::Item-->
                                         <!--begin::Item-->
-                                        <li class="breadcrumb-item text-muted">Settings</li>
+                                        <li class="breadcrumb-item text-muted">User Profile</li>
                                         <!--end::Item-->
                                     </ul>
                                     <!--end::Breadcrumb-->
@@ -58,8 +58,8 @@
                                             </i>Filter</a>
                                         <!--end::Menu toggle-->
                                         <!--begin::Menu 1-->
-                                        <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true"
-                                            id="kt_menu_65a12141a6414">
+                                        <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px"
+                                            data-kt-menu="true" id="kt_menu_65a12146ea53a">
                                             <!--begin::Header-->
                                             <div class="px-7 py-5">
                                                 <div class="fs-5 text-gray-900 fw-bold">Filter Options</div>
@@ -77,10 +77,11 @@
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
                                                     <div>
-                                                        <select class="form-select form-select-solid" multiple="multiple"
-                                                            data-kt-select2="true" data-close-on-select="false"
+                                                        <select class="form-select form-select-solid"
+                                                            multiple="multiple" data-kt-select2="true"
+                                                            data-close-on-select="false"
                                                             data-placeholder="Select option"
-                                                            data-dropdown-parent="#kt_menu_65a12141a6414"
+                                                            data-dropdown-parent="#kt_menu_65a12146ea53a"
                                                             data-allow-clear="true">
                                                             <option></option>
                                                             <option value="1">Approved</option>
@@ -110,8 +111,8 @@
                                                         <!--begin::Options-->
                                                         <label
                                                             class="form-check form-check-sm form-check-custom form-check-solid">
-                                                            <input class="form-check-input" type="checkbox" value="2"
-                                                                checked="checked" />
+                                                            <input class="form-check-input" type="checkbox"
+                                                                value="2" checked="checked" />
                                                             <span class="form-check-label">Customer</span>
                                                         </label>
                                                         <!--end::Options-->
@@ -165,1234 +166,741 @@
                         <div id="kt_app_content" class="app-content flex-column-fluid">
                             <!--begin::Content container-->
                             <div id="kt_app_content_container" class="app-container container-xxl">
-                                <!--begin::Card-->
-                                <div class="card card-flush">
-                                    <!--begin::Card body-->
-                                    <div class="card-body">
-                                        <!--begin:::Tabs-->
-                                        <ul
-                                            class="nav nav-tabs nav-line-tabs nav-line-tabs-2x border-transparent fs-4 fw-semibold mb-15">
-                                            <!--begin:::Tab item-->
-                                            <li class="nav-item">
-                                                <a class="nav-link text-active-primary d-flex align-items-center pb-5 active"
-                                                    data-bs-toggle="tab" href="#kt_ecommerce_settings_general">
-                                                    <i class="ki-duotone ki-home fs-2 me-2"></i>General</a>
-                                            </li>
-                                            <!--end:::Tab item-->
-                                            <!--begin:::Tab item-->
-                                            <li class="nav-item">
-                                                <a class="nav-link text-active-primary d-flex align-items-center pb-5"
-                                                    data-bs-toggle="tab" href="#kt_ecommerce_settings_store">
-                                                    <i class="ki-duotone ki-shop fs-2 me-2">
-                                                        <span class="path1"></span>
-                                                        <span class="path2"></span>
-                                                        <span class="path3"></span>
-                                                        <span class="path4"></span>
-                                                        <span class="path5"></span>
-                                                    </i>Store</a>
-                                            </li>
-                                            <!--end:::Tab item-->
-                                            <!--begin:::Tab item-->
-                                            <li class="nav-item">
-                                                <a class="nav-link text-active-primary d-flex align-items-center pb-5"
-                                                    data-bs-toggle="tab" href="#kt_ecommerce_settings_localization">
-                                                    <i class="ki-duotone ki-compass fs-2 me-2">
-                                                        <span class="path1"></span>
-                                                        <span class="path2"></span>
-                                                    </i>Localization</a>
-                                            </li>
-                                            <!--end:::Tab item-->
-                                            <!--begin:::Tab item-->
-                                            <li class="nav-item">
-                                                <a class="nav-link text-active-primary d-flex align-items-center pb-5"
-                                                    data-bs-toggle="tab" href="#kt_ecommerce_settings_products">
-                                                    <i class="ki-duotone ki-package fs-2 me-2">
-                                                        <span class="path1"></span>
-                                                        <span class="path2"></span>
-                                                        <span class="path3"></span>
-                                                    </i>Products</a>
-                                            </li>
-                                            <!--end:::Tab item-->
-                                            <!--begin:::Tab item-->
-                                            <li class="nav-item">
-                                                <a class="nav-link text-active-primary d-flex align-items-center pb-5"
-                                                    data-bs-toggle="tab" href="#kt_ecommerce_settings_customers">
-                                                    <i class="ki-duotone ki-people fs-2 me-2">
-                                                        <span class="path1"></span>
-                                                        <span class="path2"></span>
-                                                        <span class="path3"></span>
-                                                        <span class="path4"></span>
-                                                        <span class="path5"></span>
-                                                    </i>Customers</a>
-                                            </li>
-                                            <!--end:::Tab item-->
-                                        </ul>
-                                        <!--end:::Tabs-->
-                                        <!--begin:::Tab content-->
-                                        <div class="tab-content" id="myTabContent">
-                                            <!--begin:::Tab pane-->
-                                            <div class="tab-pane fade show active" id="kt_ecommerce_settings_general"
-                                                role="tabpanel">
-                                                <!--begin::Form-->
-                                                <form id="kt_ecommerce_settings_general_form" class="form"
-                                                    action="#">
-                                                    <!--begin::Heading-->
-                                                    <div class="row mb-7">
-                                                        <div class="col-md-9 offset-md-3">
-                                                            <h2>General Settings</h2>
-                                                        </div>
+                                <!--begin::Navbar-->
+                                <div class="card mb-5 mb-xxl-8">
+                                    <div class="card-body pt-9 pb-0">
+                                        <!--begin::Details-->
+                                        <div class="d-flex flex-wrap flex-sm-nowrap">
+                                            <!--begin: Pic-->
+                                            <div class="me-7 mb-4">
+                                                <div
+                                                    class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
+                                                    <img src="assets/media/avatars/300-1.jpg" alt="image" />
+                                                    <div
+                                                        class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-body h-20px w-20px">
                                                     </div>
-                                                    <!--end::Heading-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span class="required">Meta Title</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Set the title of the store for SEO.">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <!--begin::Input-->
-                                                            <input type="text" class="form-control form-control-solid"
-                                                                name="meta_title" value="" />
-                                                            <!--end::Input-->
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span>Meta Tag Description</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Set the description of the store for SEO.">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <!--begin::Input-->
-                                                            <textarea class="form-control form-control-solid" name="meta_description"></textarea>
-                                                            <!--end::Input-->
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span>Meta Keywords</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Set keywords for the store separated by a comma.">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <!--begin::Input-->
-                                                            <input type="text" class="form-control form-control-solid"
-                                                                name="meta_keywords" value=""
-                                                                data-kt-ecommerce-settings-type="tagify" />
-                                                            <!--end::Input-->
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span>Theme</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Set theme style for the store.">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <div class="w-100">
-                                                                <!--begin::Select2-->
-                                                                <select class="form-select form-select-solid"
-                                                                    name="theme" data-control="select2"
-                                                                    data-hide-search="true"
-                                                                    data-placeholder="Select a layout">
-                                                                    <option></option>
-                                                                    <option value="Default" selected="selected">Default
-                                                                    </option>
-                                                                    <option value="Minimalist">Minimalist</option>
-                                                                    <option value="Dark">Dark</option>
-                                                                    <option value="High_Contrast">High Contrast</option>
-                                                                </select>
-                                                                <!--end::Select2-->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span>Default Layout</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Set default layout style for the store.">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <div class="w-100">
-                                                                <!--begin::Select2-->
-                                                                <select class="form-select form-select-solid"
-                                                                    name="layout" data-control="select2"
-                                                                    data-hide-search="true"
-                                                                    data-placeholder="Select a layout">
-                                                                    <option></option>
-                                                                    <option value="Default" selected="selected">Default
-                                                                    </option>
-                                                                    <option value="Electronics">Electronics</option>
-                                                                    <option value="Fashion">Fashion</option>
-                                                                    <option value="Home">Home</option>
-                                                                    <option value="Dining">Dining</option>
-                                                                    <option value="Interior">Interior</option>
-                                                                </select>
-                                                                <!--end::Select2-->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Action buttons-->
-                                                    <div class="row py-5">
-                                                        <div class="col-md-9 offset-md-3">
-                                                            <div class="d-flex">
-                                                                <!--begin::Button-->
-                                                                <button type="reset"
-                                                                    data-kt-ecommerce-settings-type="cancel"
-                                                                    class="btn btn-light me-3">Cancel</button>
-                                                                <!--end::Button-->
-                                                                <!--begin::Button-->
-                                                                <button type="submit"
-                                                                    data-kt-ecommerce-settings-type="submit"
-                                                                    class="btn btn-primary">
-                                                                    <span class="indicator-label">Save</span>
-                                                                    <span class="indicator-progress">Please wait...
-                                                                        <span
-                                                                            class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                                                                </button>
-                                                                <!--end::Button-->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Action buttons-->
-                                                </form>
-                                                <!--end::Form-->
+                                                </div>
                                             </div>
-                                            <!--end:::Tab pane-->
-                                            <!--begin:::Tab pane-->
-                                            <div class="tab-pane fade" id="kt_ecommerce_settings_store" role="tabpanel">
-                                                <!--begin::Form-->
-                                                <form id="kt_ecommerce_settings_general_store" class="form"
-                                                    action="#">
-                                                    <!--begin::Heading-->
-                                                    <div class="row mb-7">
-                                                        <div class="col-md-9 offset-md-3">
-                                                            <h2>Store Settings</h2>
+                                            <!--end::Pic-->
+                                            <!--begin::Info-->
+                                            <div class="flex-grow-1">
+                                                <!--begin::Title-->
+                                                <div
+                                                    class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                                                    <!--begin::User-->
+                                                    <div class="d-flex flex-column">
+                                                        <!--begin::Name-->
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <a href="#"
+                                                                class="text-gray-900 text-hover-primary fs-2 fw-bold me-1">Max
+                                                                Smith</a>
+                                                            <a href="#">
+                                                                <i class="ki-duotone ki-verify fs-1 text-primary">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                </i>
+                                                            </a>
                                                         </div>
+                                                        <!--end::Name-->
+                                                        <!--begin::Info-->
+                                                        <div class="d-flex flex-wrap fw-semibold fs-6 mb-4 pe-2">
+                                                            <a href="#"
+                                                                class="d-flex align-items-center text-gray-500 text-hover-primary me-5 mb-2">
+                                                                <i class="ki-duotone ki-profile-circle fs-4 me-1">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                    <span class="path3"></span>
+                                                                </i>Developer</a>
+                                                            <a href="#"
+                                                                class="d-flex align-items-center text-gray-500 text-hover-primary me-5 mb-2">
+                                                                <i class="ki-duotone ki-geolocation fs-4 me-1">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                </i>SF, Bay Area</a>
+                                                            <a href="#"
+                                                                class="d-flex align-items-center text-gray-500 text-hover-primary mb-2">
+                                                                <i class="ki-duotone ki-sms fs-4 me-1">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                </i>max@kt.com</a>
+                                                        </div>
+                                                        <!--end::Info-->
                                                     </div>
-                                                    <!--end::Heading-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span class="required">Store Name</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Set the name of the store">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <!--begin::Input-->
-                                                            <input type="text" class="form-control form-control-solid"
-                                                                name="store_name" value="" />
-                                                            <!--end::Input-->
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span class="required">Store Owner</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Set the store owner's name">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <!--begin::Input-->
-                                                            <input type="text" class="form-control form-control-solid"
-                                                                name="store_owner" value="" />
-                                                            <!--end::Input-->
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span class="required">Address</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Set the store's full address.">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <!--begin::Input-->
-                                                            <textarea class="form-control form-control-solid" name="store_address"></textarea>
-                                                            <!--end::Input-->
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span>Geocode</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Enter the store geocode manually (optional)">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <!--begin::Input-->
-                                                            <input type="text" class="form-control form-control-solid"
-                                                                name="store_geocode" value="" />
-                                                            <!--end::Input-->
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span class="required">Email</span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <!--begin::Input-->
-                                                            <input type="email" class="form-control form-control-solid"
-                                                                name="store_email" value="" />
-                                                            <!--end::Input-->
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span class="required">Phone</span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <!--begin::Input-->
-                                                            <input type="text" class="form-control form-control-solid"
-                                                                name="store_phone" value="" />
-                                                            <!--end::Input-->
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span>Fax</span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <!--begin::Input-->
-                                                            <input type="text" class="form-control form-control-solid"
-                                                                name="store_fax" value="" />
-                                                            <!--end::Input-->
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Action buttons-->
-                                                    <div class="row py-5">
-                                                        <div class="col-md-9 offset-md-3">
-                                                            <div class="d-flex">
-                                                                <!--begin::Button-->
-                                                                <button type="reset"
-                                                                    data-kt-ecommerce-settings-type="cancel"
-                                                                    class="btn btn-light me-3">Cancel</button>
-                                                                <!--end::Button-->
-                                                                <!--begin::Button-->
-                                                                <button type="submit"
-                                                                    data-kt-ecommerce-settings-type="submit"
-                                                                    class="btn btn-primary">
-                                                                    <span class="indicator-label">Save</span>
-                                                                    <span class="indicator-progress">Please wait...
-                                                                        <span
-                                                                            class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                                                                </button>
-                                                                <!--end::Button-->
+                                                    <!--end::User-->
+                                                    <!--begin::Actions-->
+                                                    <div class="d-flex my-4">
+                                                        <a href="#" class="btn btn-sm btn-light me-2"
+                                                            id="kt_user_follow_button">
+                                                            <i class="ki-duotone ki-check fs-3 d-none"></i>
+                                                            <!--begin::Indicator label-->
+                                                            <span class="indicator-label">Follow</span>
+                                                            <!--end::Indicator label-->
+                                                            <!--begin::Indicator progress-->
+                                                            <span class="indicator-progress">Please wait...
+                                                                <span
+                                                                    class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                                            <!--end::Indicator progress-->
+                                                        </a>
+                                                        <a href="#" class="btn btn-sm btn-primary me-3"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#kt_modal_offer_a_deal">Hire Me</a>
+                                                        <!--begin::Menu-->
+                                                        <div class="me-0">
+                                                            <button
+                                                                class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"
+                                                                data-kt-menu-trigger="click"
+                                                                data-kt-menu-placement="bottom-end">
+                                                                <i class="ki-solid ki-dots-horizontal fs-2x"></i>
+                                                            </button>
+                                                            <!--begin::Menu 3-->
+                                                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px py-3"
+                                                                data-kt-menu="true">
+                                                                <!--begin::Heading-->
+                                                                <div class="menu-item px-3">
+                                                                    <div
+                                                                        class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">
+                                                                        Payments</div>
+                                                                </div>
+                                                                <!--end::Heading-->
+                                                                <!--begin::Menu item-->
+                                                                <div class="menu-item px-3">
+                                                                    <a href="#" class="menu-link px-3">Create
+                                                                        Invoice</a>
+                                                                </div>
+                                                                <!--end::Menu item-->
+                                                                <!--begin::Menu item-->
+                                                                <div class="menu-item px-3">
+                                                                    <a href="#"
+                                                                        class="menu-link flex-stack px-3">Create Payment
+                                                                        <span class="ms-2" data-bs-toggle="tooltip"
+                                                                            title="Specify a target name for future usage and reference">
+                                                                            <i class="ki-duotone ki-information fs-6">
+                                                                                <span class="path1"></span>
+                                                                                <span class="path2"></span>
+                                                                                <span class="path3"></span>
+                                                                            </i>
+                                                                        </span></a>
+                                                                </div>
+                                                                <!--end::Menu item-->
+                                                                <!--begin::Menu item-->
+                                                                <div class="menu-item px-3">
+                                                                    <a href="#" class="menu-link px-3">Generate
+                                                                        Bill</a>
+                                                                </div>
+                                                                <!--end::Menu item-->
+                                                                <!--begin::Menu item-->
+                                                                <div class="menu-item px-3" data-kt-menu-trigger="hover"
+                                                                    data-kt-menu-placement="right-end">
+                                                                    <a href="#" class="menu-link px-3">
+                                                                        <span class="menu-title">Subscription</span>
+                                                                        <span class="menu-arrow"></span>
+                                                                    </a>
+                                                                    <!--begin::Menu sub-->
+                                                                    <div class="menu-sub menu-sub-dropdown w-175px py-4">
+                                                                        <!--begin::Menu item-->
+                                                                        <div class="menu-item px-3">
+                                                                            <a href="#"
+                                                                                class="menu-link px-3">Plans</a>
+                                                                        </div>
+                                                                        <!--end::Menu item-->
+                                                                        <!--begin::Menu item-->
+                                                                        <div class="menu-item px-3">
+                                                                            <a href="#"
+                                                                                class="menu-link px-3">Billing</a>
+                                                                        </div>
+                                                                        <!--end::Menu item-->
+                                                                        <!--begin::Menu item-->
+                                                                        <div class="menu-item px-3">
+                                                                            <a href="#"
+                                                                                class="menu-link px-3">Statements</a>
+                                                                        </div>
+                                                                        <!--end::Menu item-->
+                                                                        <!--begin::Menu separator-->
+                                                                        <div class="separator my-2"></div>
+                                                                        <!--end::Menu separator-->
+                                                                        <!--begin::Menu item-->
+                                                                        <div class="menu-item px-3">
+                                                                            <div class="menu-content px-3">
+                                                                                <!--begin::Switch-->
+                                                                                <label
+                                                                                    class="form-check form-switch form-check-custom form-check-solid">
+                                                                                    <!--begin::Input-->
+                                                                                    <input
+                                                                                        class="form-check-input w-30px h-20px"
+                                                                                        type="checkbox" value="1"
+                                                                                        checked="checked"
+                                                                                        name="notifications" />
+                                                                                    <!--end::Input-->
+                                                                                    <!--end::Label-->
+                                                                                    <span
+                                                                                        class="form-check-label text-muted fs-6">Recuring</span>
+                                                                                    <!--end::Label-->
+                                                                                </label>
+                                                                                <!--end::Switch-->
+                                                                            </div>
+                                                                        </div>
+                                                                        <!--end::Menu item-->
+                                                                    </div>
+                                                                    <!--end::Menu sub-->
+                                                                </div>
+                                                                <!--end::Menu item-->
+                                                                <!--begin::Menu item-->
+                                                                <div class="menu-item px-3 my-1">
+                                                                    <a href="#"
+                                                                        class="menu-link px-3">Settings</a>
+                                                                </div>
+                                                                <!--end::Menu item-->
                                                             </div>
+                                                            <!--end::Menu 3-->
+                                                        </div>
+                                                        <!--end::Menu-->
+                                                    </div>
+                                                    <!--end::Actions-->
+                                                </div>
+                                                <!--end::Title-->
+                                                <!--begin::Stats-->
+                                                <div class="d-flex flex-wrap flex-stack">
+                                                    <!--begin::Wrapper-->
+                                                    <div class="d-flex flex-column flex-grow-1 pe-8">
+                                                        <!--begin::Stats-->
+                                                        <div class="d-flex flex-wrap">
+                                                            <!--begin::Stat-->
+                                                            <div
+                                                                class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                                <!--begin::Number-->
+                                                                <div class="d-flex align-items-center">
+                                                                    <i
+                                                                        class="ki-duotone ki-arrow-up fs-3 text-success me-2">
+                                                                        <span class="path1"></span>
+                                                                        <span class="path2"></span>
+                                                                    </i>
+                                                                    <div class="fs-2 fw-bold" data-kt-countup="true"
+                                                                        data-kt-countup-value="4500"
+                                                                        data-kt-countup-prefix="$">0</div>
+                                                                </div>
+                                                                <!--end::Number-->
+                                                                <!--begin::Label-->
+                                                                <div class="fw-semibold fs-6 text-gray-500">Earnings</div>
+                                                                <!--end::Label-->
+                                                            </div>
+                                                            <!--end::Stat-->
+                                                            <!--begin::Stat-->
+                                                            <div
+                                                                class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                                <!--begin::Number-->
+                                                                <div class="d-flex align-items-center">
+                                                                    <i
+                                                                        class="ki-duotone ki-arrow-down fs-3 text-danger me-2">
+                                                                        <span class="path1"></span>
+                                                                        <span class="path2"></span>
+                                                                    </i>
+                                                                    <div class="fs-2 fw-bold" data-kt-countup="true"
+                                                                        data-kt-countup-value="80">0</div>
+                                                                </div>
+                                                                <!--end::Number-->
+                                                                <!--begin::Label-->
+                                                                <div class="fw-semibold fs-6 text-gray-500">Projects</div>
+                                                                <!--end::Label-->
+                                                            </div>
+                                                            <!--end::Stat-->
+                                                            <!--begin::Stat-->
+                                                            <div
+                                                                class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                                <!--begin::Number-->
+                                                                <div class="d-flex align-items-center">
+                                                                    <i
+                                                                        class="ki-duotone ki-arrow-up fs-3 text-success me-2">
+                                                                        <span class="path1"></span>
+                                                                        <span class="path2"></span>
+                                                                    </i>
+                                                                    <div class="fs-2 fw-bold" data-kt-countup="true"
+                                                                        data-kt-countup-value="60"
+                                                                        data-kt-countup-prefix="%">0</div>
+                                                                </div>
+                                                                <!--end::Number-->
+                                                                <!--begin::Label-->
+                                                                <div class="fw-semibold fs-6 text-gray-500">Success Rate
+                                                                </div>
+                                                                <!--end::Label-->
+                                                            </div>
+                                                            <!--end::Stat-->
+                                                        </div>
+                                                        <!--end::Stats-->
+                                                    </div>
+                                                    <!--end::Wrapper-->
+                                                    <!--begin::Progress-->
+                                                    <div
+                                                        class="d-flex align-items-center w-200px w-sm-300px flex-column mt-3">
+                                                        <div class="d-flex justify-content-between w-100 mt-auto mb-2">
+                                                            <span class="fw-semibold fs-6 text-gray-500">Profile
+                                                                Compleation</span>
+                                                            <span class="fw-bold fs-6">50%</span>
+                                                        </div>
+                                                        <div class="h-5px mx-3 w-100 bg-light mb-3">
+                                                            <div class="bg-success rounded h-5px" role="progressbar"
+                                                                style="width: 50%;" aria-valuenow="50"
+                                                                aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
                                                     </div>
-                                                    <!--end::Action buttons-->
-                                                </form>
-                                                <!--end::Form-->
+                                                    <!--end::Progress-->
+                                                </div>
+                                                <!--end::Stats-->
                                             </div>
-                                            <!--end:::Tab pane-->
-                                            <!--begin:::Tab pane-->
-                                            <div class="tab-pane fade" id="kt_ecommerce_settings_localization"
-                                                role="tabpanel">
-                                                <!--begin::Form-->
-                                                <form id="kt_ecommerce_settings_general_localization" class="form"
-                                                    action="#">
-                                                    <!--begin::Heading-->
-                                                    <div class="row mb-7">
-                                                        <div class="col-md-9 offset-md-3">
-                                                            <h2>Localization Settings</h2>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Heading-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span class="required">Country</span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <!--begin::Select2-->
-                                                            @include('widget.country')
-                                                            <!--end::Select2-->
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span class="required">Language</span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <div class="w-100">
-                                                                <!--begin::Select2-->
-                                                                @include('widget.country')
-                                                                <!--end::Select2-->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span class="required">Currency</span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <div class="w-100">
-                                                                <!--begin::Select2-->
-                                                                <select class="form-select form-select-solid"
-                                                                    name="localization_currency" data-control="select2"
-                                                                    data-hide-search="true"
-                                                                    data-placeholder="Select a currency">
-                                                                    <option></option>
-                                                                    <option value="USD">US Dollar</option>
-                                                                    <option value="Euro">Euro</option>
-                                                                    <option value="Pound">Pound</option>
-                                                                    <option value="AUD">Australian Dollar</option>
-                                                                    <option value="JPY">Japanese Yen</option>
-                                                                    <option value="KRW">Korean Won</option>
-                                                                </select>
-                                                                <!--end::Select2-->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span>Length Class</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Set the unit measurement for length.">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <div class="w-100">
-                                                                <!--begin::Select2-->
-                                                                <select class="form-select form-select-solid"
-                                                                    name="localization_currency" data-control="select2"
-                                                                    data-hide-search="true"
-                                                                    data-placeholder="Select a length class">
-                                                                    <option></option>
-                                                                    <option value="cm" selected="selected">Centimeter
-                                                                    </option>
-                                                                    <option value="mm">Milimeter</option>
-                                                                    <option value="in">Inch</option>
-                                                                </select>
-                                                                <!--end::Select2-->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span>Weight Class</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Set the unit measurement for weight.">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <div class="w-100">
-                                                                <!--begin::Select2-->
-                                                                <select class="form-select form-select-solid"
-                                                                    name="localization_currency" data-control="select2"
-                                                                    data-hide-search="true"
-                                                                    data-placeholder="Select a weight class">
-                                                                    <option></option>
-                                                                    <option value="kg" selected="selected">Kilogram
-                                                                    </option>
-                                                                    <option value="g">Gram</option>
-                                                                    <option value="lb">Pound</option>
-                                                                    <option value="oz">Ounce</option>
-                                                                </select>
-                                                                <!--end::Select2-->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Action buttons-->
-                                                    <div class="row py-5">
-                                                        <div class="col-md-9 offset-md-3">
-                                                            <div class="d-flex">
-                                                                <!--begin::Button-->
-                                                                <button type="reset"
-                                                                    data-kt-ecommerce-settings-type="cancel"
-                                                                    class="btn btn-light me-3">Cancel</button>
-                                                                <!--end::Button-->
-                                                                <!--begin::Button-->
-                                                                <button type="submit"
-                                                                    data-kt-ecommerce-settings-type="submit"
-                                                                    class="btn btn-primary">
-                                                                    <span class="indicator-label">Save</span>
-                                                                    <span class="indicator-progress">Please wait...
-                                                                        <span
-                                                                            class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                                                                </button>
-                                                                <!--end::Button-->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Action buttons-->
-                                                </form>
-                                                <!--end::Form-->
-                                            </div>
-                                            <!--end:::Tab pane-->
-                                            <!--begin:::Tab pane-->
-                                            <div class="tab-pane fade" id="kt_ecommerce_settings_products"
-                                                role="tabpanel">
-                                                <!--begin::Form-->
-                                                <form id="kt_ecommerce_settings_general_products" class="form"
-                                                    action="#">
-                                                    <!--begin::Heading-->
-                                                    <div class="row mb-7">
-                                                        <div class="col-md-9 offset-md-3">
-                                                            <h2>Cateogries Settings</h2>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Heading-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span>Category Product Count</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Show the number of products inside the subcategories in the storefront header category menu. Be warned, this will cause an extreme performance hit for stores with a lot of subcategories!">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <div class="d-flex mt-3">
-                                                                <!--begin::Radio-->
-                                                                <div
-                                                                    class="form-check form-check-custom form-check-solid me-5">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        value="" name="category_product_count"
-                                                                        id="category_product_count_yes"
-                                                                        checked="checked" />
-                                                                    <label class="form-check-label"
-                                                                        for="category_product_count_yes">Yes</label>
-                                                                </div>
-                                                                <div class="form-check form-check-custom form-check-solid">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        value="" name="category_product_count"
-                                                                        id="category_product_count_no" />
-                                                                    <label class="form-check-label"
-                                                                        for="category_product_count_no">No</label>
-                                                                </div>
-                                                                <!--end::Radio-->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-16">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span class="required">Default Items Per Page</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Determines how many items are shown per page.">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <!--begin::Input-->
-                                                            <input type="text" class="form-control form-control-solid"
-                                                                name="products_items_per_page" value="10" />
-                                                            <!--end::Input-->
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Heading-->
-                                                    <div class="row mb-7">
-                                                        <div class="col-md-9 offset-md-3">
-                                                            <h2>Reviews Settings</h2>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Heading-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span>Allow Reviews</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Enable/disable review entries for registered customers.">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <div class="d-flex mt-3">
-                                                                <!--begin::Radio-->
-                                                                <div
-                                                                    class="form-check form-check-custom form-check-solid me-5">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        value="" name="allow_reviews"
-                                                                        id="allow_reviews_yes" checked="checked" />
-                                                                    <label class="form-check-label"
-                                                                        for="allow_reviews_yes">Yes</label>
-                                                                </div>
-                                                                <div class="form-check form-check-custom form-check-solid">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        value="" name="allow_reviews"
-                                                                        id="allow_reviews_no" />
-                                                                    <label class="form-check-label"
-                                                                        for="allow_reviews_no">No</label>
-                                                                </div>
-                                                                <!--end::Radio-->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-16">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span>Allow Guest Reviews</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Enable/disable review entries for public guest customers">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <div class="d-flex mt-3">
-                                                                <!--begin::Radio-->
-                                                                <div
-                                                                    class="form-check form-check-custom form-check-solid me-5">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        value="" name="allow_guest_reviews"
-                                                                        id="allow_guest_reviews_yes" />
-                                                                    <label class="form-check-label"
-                                                                        for="allow_guest_reviews_yes">Yes</label>
-                                                                </div>
-                                                                <div class="form-check form-check-custom form-check-solid">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        value="" name="allow_guest_reviews"
-                                                                        id="allow_guest_reviews_no" checked="checked" />
-                                                                    <label class="form-check-label"
-                                                                        for="allow_guest_reviews_no">No</label>
-                                                                </div>
-                                                                <!--end::Radio-->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Heading-->
-                                                    <div class="row mb-7">
-                                                        <div class="col-md-9 offset-md-3">
-                                                            <h2>Vouchers Settings</h2>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Heading-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span class="required">Minimum Vouchers</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Minimum number of vouchers customers can attach to an order">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <!--begin::Input-->
-                                                            <input type="text" class="form-control form-control-solid"
-                                                                name="products_min_voucher" value="1" />
-                                                            <!--end::Input-->
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-16">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span class="required">Maximum Vouchers</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Maximum number of vouchers customers can attach to an order">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <!--begin::Input-->
-                                                            <input type="text" class="form-control form-control-solid"
-                                                                name="products_max_voucher" value="10" />
-                                                            <!--end::Input-->
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Heading-->
-                                                    <div class="row mb-7">
-                                                        <div class="col-md-9 offset-md-3">
-                                                            <h2>Tax Settings</h2>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Heading-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span>Display Prices with Tax</span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <div class="d-flex mt-3">
-                                                                <!--begin::Radio-->
-                                                                <div
-                                                                    class="form-check form-check-custom form-check-solid me-5">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        value="" name="product_tax"
-                                                                        id="product_tax_yes" checked="checked" />
-                                                                    <label class="form-check-label"
-                                                                        for="product_tax_yes">Yes</label>
-                                                                </div>
-                                                                <div class="form-check form-check-custom form-check-solid">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        value="" name="product_tax"
-                                                                        id="product_tax_no" />
-                                                                    <label class="form-check-label"
-                                                                        for="product_tax_no">No</label>
-                                                                </div>
-                                                                <!--end::Radio-->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span class="required">Default Tax Rate</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Determines the tax percentage (%) applied to orders">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <!--begin::Input-->
-                                                            <input type="text" class="form-control form-control-solid"
-                                                                name="products_tax_rate" value="15%" />
-                                                            <!--end::Input-->
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Action buttons-->
-                                                    <div class="row py-5">
-                                                        <div class="col-md-9 offset-md-3">
-                                                            <div class="d-flex">
-                                                                <!--begin::Button-->
-                                                                <button type="reset"
-                                                                    data-kt-ecommerce-settings-type="cancel"
-                                                                    class="btn btn-light me-3">Cancel</button>
-                                                                <!--end::Button-->
-                                                                <!--begin::Button-->
-                                                                <button type="submit"
-                                                                    data-kt-ecommerce-settings-type="submit"
-                                                                    class="btn btn-primary">
-                                                                    <span class="indicator-label">Save</span>
-                                                                    <span class="indicator-progress">Please wait...
-                                                                        <span
-                                                                            class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                                                                </button>
-                                                                <!--end::Button-->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Action buttons-->
-                                                </form>
-                                                <!--end::Form-->
-                                            </div>
-                                            <!--end:::Tab pane-->
-                                            <!--begin:::Tab pane-->
-                                            <div class="tab-pane fade" id="kt_ecommerce_settings_customers"
-                                                role="tabpanel">
-                                                <!--begin::Form-->
-                                                <form id="kt_ecommerce_settings_general_customers" class="form"
-                                                    action="#">
-                                                    <!--begin::Heading-->
-                                                    <div class="row mb-7">
-                                                        <div class="col-md-9 offset-md-3">
-                                                            <h2>Customers Settings</h2>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Heading-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span>Customers Online</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Enable/disable tracking customers online status.">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <div class="d-flex mt-3">
-                                                                <!--begin::Radio-->
-                                                                <div
-                                                                    class="form-check form-check-custom form-check-solid me-5">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        value="" name="customers_online"
-                                                                        id="customers_online_yes" checked="checked" />
-                                                                    <label class="form-check-label"
-                                                                        for="customers_online_yes">Yes</label>
-                                                                </div>
-                                                                <div class="form-check form-check-custom form-check-solid">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        value="" name="customers_online"
-                                                                        id="customers_online_no" />
-                                                                    <label class="form-check-label"
-                                                                        for="customers_online_no">No</label>
-                                                                </div>
-                                                                <!--end::Radio-->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span>Customers Activity</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Enable/disable tracking customers activity.">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <div class="d-flex mt-3">
-                                                                <!--begin::Radio-->
-                                                                <div
-                                                                    class="form-check form-check-custom form-check-solid me-5">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        value="" name="customers_activity"
-                                                                        id="customers_activity_yes" checked="checked" />
-                                                                    <label class="form-check-label"
-                                                                        for="customers_activity_yes">Yes</label>
-                                                                </div>
-                                                                <div class="form-check form-check-custom form-check-solid">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        value="" name="customers_activity"
-                                                                        id="customers_activity_no" />
-                                                                    <label class="form-check-label"
-                                                                        for="customers_activity_no">No</label>
-                                                                </div>
-                                                                <!--end::Radio-->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span>Customer Searches</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Enable/disable logging customers search keywords.">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <div class="d-flex mt-3">
-                                                                <!--begin::Radio-->
-                                                                <div
-                                                                    class="form-check form-check-custom form-check-solid me-5">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        value="" name="customers_searches"
-                                                                        id="customers_searches_yes" checked="checked" />
-                                                                    <label class="form-check-label"
-                                                                        for="customers_searches_yes">Yes</label>
-                                                                </div>
-                                                                <div class="form-check form-check-custom form-check-solid">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        value="" name="customers_searches"
-                                                                        id="customers_searches_no" />
-                                                                    <label class="form-check-label"
-                                                                        for="customers_searches_no">No</label>
-                                                                </div>
-                                                                <!--end::Radio-->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span>Allow Guest Checkout</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Enable/disable guest customers to checkout.">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <div class="d-flex mt-3">
-                                                                <!--begin::Radio-->
-                                                                <div
-                                                                    class="form-check form-check-custom form-check-solid me-5">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        value="" name="customers_guest_checkout"
-                                                                        id="customers_guest_checkout_yes" />
-                                                                    <label class="form-check-label"
-                                                                        for="customers_guest_checkout_yes">Yes</label>
-                                                                </div>
-                                                                <div class="form-check form-check-custom form-check-solid">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        value="" name="customers_guest_checkout"
-                                                                        id="customers_guest_checkout_no"
-                                                                        checked="checked" />
-                                                                    <label class="form-check-label"
-                                                                        for="customers_guest_checkout_no">No</label>
-                                                                </div>
-                                                                <!--end::Radio-->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span>Login Display Prices</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Only show prices when customers log in.">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <div class="d-flex mt-3">
-                                                                <!--begin::Radio-->
-                                                                <div
-                                                                    class="form-check form-check-custom form-check-solid me-5">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        value="" name="customers_login_prices"
-                                                                        id="customers_login_prices_yes" />
-                                                                    <label class="form-check-label"
-                                                                        for="customers_login_prices_yes">Yes</label>
-                                                                </div>
-                                                                <div class="form-check form-check-custom form-check-solid">
-                                                                    <input class="form-check-input" type="radio"
-                                                                        value="" name="customers_login_prices"
-                                                                        id="customers_login_prices_no"
-                                                                        checked="checked" />
-                                                                    <label class="form-check-label"
-                                                                        for="customers_login_prices_no">No</label>
-                                                                </div>
-                                                                <!--end::Radio-->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span class="required">Max Login Attempts</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Set the max number of login attempts before the customer account is locked for 1 hour.">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <!--begin::Input-->
-                                                            <input type="text" class="form-control form-control-solid"
-                                                                name="customer_login_attempts" value="" />
-                                                            <!--end::Input-->
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Action buttons-->
-                                                    <div class="row py-5">
-                                                        <div class="col-md-9 offset-md-3">
-                                                            <div class="d-flex">
-                                                                <!--begin::Button-->
-                                                                <button type="reset"
-                                                                    data-kt-ecommerce-settings-type="cancel"
-                                                                    class="btn btn-light me-3">Cancel</button>
-                                                                <!--end::Button-->
-                                                                <!--begin::Button-->
-                                                                <button type="submit"
-                                                                    data-kt-ecommerce-settings-type="submit"
-                                                                    class="btn btn-primary">
-                                                                    <span class="indicator-label">Save</span>
-                                                                    <span class="indicator-progress">Please wait...
-                                                                        <span
-                                                                            class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                                                                </button>
-                                                                <!--end::Button-->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Action buttons-->
-                                                </form>
-                                                <!--end::Form-->
-                                            </div>
-                                            <!--end:::Tab pane-->
+                                            <!--end::Info-->
                                         </div>
-                                        <!--end:::Tab content-->
+                                        <!--end::Details-->
+                                        <!--begin::Navs-->
+                                        <ul
+                                            class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold">
+                                            <!--begin::Nav item-->
+                                            <li class="nav-item mt-2">
+                                                <a class="nav-link text-active-primary ms-0 me-10 py-5 active"
+                                                    href="pages/user-profile/overview.html">Overview</a>
+                                            </li>
+                                            <!--end::Nav item-->
+                                            <!--begin::Nav item-->
+                                            <li class="nav-item mt-2">
+                                                <a class="nav-link text-active-primary ms-0 me-10 py-5"
+                                                    href="pages/user-profile/projects.html">Projects</a>
+                                            </li>
+                                            <!--end::Nav item-->
+                                            <!--begin::Nav item-->
+                                            <li class="nav-item mt-2">
+                                                <a class="nav-link text-active-primary ms-0 me-10 py-5"
+                                                    href="pages/user-profile/campaigns.html">Campaigns</a>
+                                            </li>
+                                            <!--end::Nav item-->
+                                            <!--begin::Nav item-->
+                                            <li class="nav-item mt-2">
+                                                <a class="nav-link text-active-primary ms-0 me-10 py-5"
+                                                    href="pages/user-profile/documents.html">Documents</a>
+                                            </li>
+                                            <!--end::Nav item-->
+                                            <!--begin::Nav item-->
+                                            <li class="nav-item mt-2">
+                                                <a class="nav-link text-active-primary ms-0 me-10 py-5"
+                                                    href="pages/user-profile/followers.html">Followers</a>
+                                            </li>
+                                            <!--end::Nav item-->
+                                            <!--begin::Nav item-->
+                                            <li class="nav-item mt-2">
+                                                <a class="nav-link text-active-primary ms-0 me-10 py-5"
+                                                    href="pages/user-profile/activity.html">Activity</a>
+                                            </li>
+                                            <!--end::Nav item-->
+                                        </ul>
+                                        <!--begin::Navs-->
                                     </div>
-                                    <!--end::Card body-->
                                 </div>
-                                <!--end::Card-->
+                                <!--end::Navbar-->
+                                <!--begin::Row-->
+                                <div class="row g-5 g-xxl-8">
+                                    <!--begin::Col-->
+                                    <div class="col-xl-6">
+                                        <!--begin::Charts Widget 1-->
+                                        <div class="card mb-5 mb-xxl-8">
+                                            <!--begin::Header-->
+                                            <div class="card-header border-0 pt-5">
+                                                <!--begin::Title-->
+                                                <h3 class="card-title align-items-start flex-column">
+                                                    <span class="card-label fw-bold fs-3 mb-1">Recent Statistics</span>
+                                                    <span class="text-muted fw-semibold fs-7">More than 400 new
+                                                        members</span>
+                                                </h3>
+                                                <!--end::Title-->
+                                                <!--begin::Toolbar-->
+                                                <div class="card-toolbar">
+                                                    <!--begin::Menu-->
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary"
+                                                        data-kt-menu-trigger="click"
+                                                        data-kt-menu-placement="bottom-end">
+                                                        <i class="ki-duotone ki-category fs-6">
+                                                            <span class="path1"></span>
+                                                            <span class="path2"></span>
+                                                            <span class="path3"></span>
+                                                            <span class="path4"></span>
+                                                        </i>
+                                                    </button>
+                                                    <!--begin::Menu 1-->
+                                                    <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px"
+                                                        data-kt-menu="true" id="kt_menu_65a12146ea8cc">
+                                                        <!--begin::Header-->
+                                                        <div class="px-7 py-5">
+                                                            <div class="fs-5 text-gray-900 fw-bold">Filter Options</div>
+                                                        </div>
+                                                        <!--end::Header-->
+                                                        <!--begin::Menu separator-->
+                                                        <div class="separator border-gray-200"></div>
+                                                        <!--end::Menu separator-->
+                                                        <!--begin::Form-->
+                                                        <div class="px-7 py-5">
+                                                            <!--begin::Input group-->
+                                                            <div class="mb-10">
+                                                                <!--begin::Label-->
+                                                                <label class="form-label fw-semibold">Status:</label>
+                                                                <!--end::Label-->
+                                                                <!--begin::Input-->
+                                                                <div>
+                                                                    <select class="form-select form-select-solid"
+                                                                        multiple="multiple" data-kt-select2="true"
+                                                                        data-close-on-select="false"
+                                                                        data-placeholder="Select option"
+                                                                        data-dropdown-parent="#kt_menu_65a12146ea8cc"
+                                                                        data-allow-clear="true">
+                                                                        <option></option>
+                                                                        <option value="1">Approved</option>
+                                                                        <option value="2">Pending</option>
+                                                                        <option value="2">In Process</option>
+                                                                        <option value="2">Rejected</option>
+                                                                    </select>
+                                                                </div>
+                                                                <!--end::Input-->
+                                                            </div>
+                                                            <!--end::Input group-->
+                                                            <!--begin::Input group-->
+                                                            <div class="mb-10">
+                                                                <!--begin::Label-->
+                                                                <label class="form-label fw-semibold">Member Type:</label>
+                                                                <!--end::Label-->
+                                                                <!--begin::Options-->
+                                                                <div class="d-flex">
+                                                                    <!--begin::Options-->
+                                                                    <label
+                                                                        class="form-check form-check-sm form-check-custom form-check-solid me-5">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="1" />
+                                                                        <span class="form-check-label">Author</span>
+                                                                    </label>
+                                                                    <!--end::Options-->
+                                                                    <!--begin::Options-->
+                                                                    <label
+                                                                        class="form-check form-check-sm form-check-custom form-check-solid">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="2" checked="checked" />
+                                                                        <span class="form-check-label">Customer</span>
+                                                                    </label>
+                                                                    <!--end::Options-->
+                                                                </div>
+                                                                <!--end::Options-->
+                                                            </div>
+                                                            <!--end::Input group-->
+                                                            <!--begin::Input group-->
+                                                            <div class="mb-10">
+                                                                <!--begin::Label-->
+                                                                <label
+                                                                    class="form-label fw-semibold">Notifications:</label>
+                                                                <!--end::Label-->
+                                                                <!--begin::Switch-->
+                                                                <div
+                                                                    class="form-check form-switch form-switch-sm form-check-custom form-check-solid">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" name="notifications"
+                                                                        checked="checked" />
+                                                                    <label class="form-check-label">Enabled</label>
+                                                                </div>
+                                                                <!--end::Switch-->
+                                                            </div>
+                                                            <!--end::Input group-->
+                                                            <!--begin::Actions-->
+                                                            <div class="d-flex justify-content-end">
+                                                                <button type="reset"
+                                                                    class="btn btn-sm btn-light btn-active-light-primary me-2"
+                                                                    data-kt-menu-dismiss="true">Reset</button>
+                                                                <button type="submit" class="btn btn-sm btn-primary"
+                                                                    data-kt-menu-dismiss="true">Apply</button>
+                                                            </div>
+                                                            <!--end::Actions-->
+                                                        </div>
+                                                        <!--end::Form-->
+                                                    </div>
+                                                    <!--end::Menu 1-->
+                                                    <!--end::Menu-->
+                                                </div>
+                                                <!--end::Toolbar-->
+                                            </div>
+                                            <!--end::Header-->
+                                            <!--begin::Body-->
+                                            <div class="card-body">
+                                                <!--begin::Chart-->
+                                                <div id="kt_charts_widget_1_chart" style="height: 350px"></div>
+                                                <!--end::Chart-->
+                                            </div>
+                                            <!--end::Body-->
+                                        </div>
+                                        <!--end::Charts Widget 1-->
+                                        <!--begin::List Widget 5-->
+
+                                        <!--end: List Widget 5-->
+                                    </div>
+                                    <!--end::Col-->
+                                    <!--begin::Col-->
+                                    <div class="col-xl-6">
+                                        <div class="card mb-5 mb-xxl-8">
+                                            <!--begin::Header-->
+                                            <div class="card-header align-items-center border-0 mt-4">
+                                                <h3 class="card-title align-items-start flex-column">
+                                                    <span class="fw-bold mb-2 text-gray-900">Activities</span>
+                                                    <span class="text-muted fw-semibold fs-7">890,344 Sales</span>
+                                                </h3>
+                                                <div class="card-toolbar">
+                                                    <!--begin::Menu-->
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary"
+                                                        data-kt-menu-trigger="click"
+                                                        data-kt-menu-placement="bottom-end">
+                                                        <i class="ki-duotone ki-category fs-6">
+                                                            <span class="path1"></span>
+                                                            <span class="path2"></span>
+                                                            <span class="path3"></span>
+                                                            <span class="path4"></span>
+                                                        </i>
+                                                    </button>
+                                                    <!--begin::Menu 1-->
+                                                    <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px"
+                                                        data-kt-menu="true" id="kt_menu_65a12146ea996">
+                                                        <!--begin::Header-->
+                                                        <div class="px-7 py-5">
+                                                            <div class="fs-5 text-gray-900 fw-bold">Filter Options</div>
+                                                        </div>
+                                                        <!--end::Header-->
+                                                        <!--begin::Menu separator-->
+                                                        <div class="separator border-gray-200"></div>
+                                                        <!--end::Menu separator-->
+                                                        <!--begin::Form-->
+                                                        <div class="px-7 py-5">
+                                                            <!--begin::Input group-->
+                                                            <div class="mb-10">
+                                                                <!--begin::Label-->
+                                                                <label class="form-label fw-semibold">Status:</label>
+                                                                <!--end::Label-->
+                                                                <!--begin::Input-->
+                                                                <div>
+                                                                    <select class="form-select form-select-solid"
+                                                                        multiple="multiple" data-kt-select2="true"
+                                                                        data-close-on-select="false"
+                                                                        data-placeholder="Select option"
+                                                                        data-dropdown-parent="#kt_menu_65a12146ea996"
+                                                                        data-allow-clear="true">
+                                                                        <option></option>
+                                                                        <option value="1">Approved</option>
+                                                                        <option value="2">Pending</option>
+                                                                        <option value="2">In Process</option>
+                                                                        <option value="2">Rejected</option>
+                                                                    </select>
+                                                                </div>
+                                                                <!--end::Input-->
+                                                            </div>
+                                                            <!--end::Input group-->
+                                                            <!--begin::Input group-->
+                                                            <div class="mb-10">
+                                                                <!--begin::Label-->
+                                                                <label class="form-label fw-semibold">Member Type:</label>
+                                                                <!--end::Label-->
+                                                                <!--begin::Options-->
+                                                                <div class="d-flex">
+                                                                    <!--begin::Options-->
+                                                                    <label
+                                                                        class="form-check form-check-sm form-check-custom form-check-solid me-5">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="1" />
+                                                                        <span class="form-check-label">Author</span>
+                                                                    </label>
+                                                                    <!--end::Options-->
+                                                                    <!--begin::Options-->
+                                                                    <label
+                                                                        class="form-check form-check-sm form-check-custom form-check-solid">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            value="2" checked="checked" />
+                                                                        <span class="form-check-label">Customer</span>
+                                                                    </label>
+                                                                    <!--end::Options-->
+                                                                </div>
+                                                                <!--end::Options-->
+                                                            </div>
+                                                            <!--end::Input group-->
+                                                            <!--begin::Input group-->
+                                                            <div class="mb-10">
+                                                                <!--begin::Label-->
+                                                                <label
+                                                                    class="form-label fw-semibold">Notifications:</label>
+                                                                <!--end::Label-->
+                                                                <!--begin::Switch-->
+                                                                <div
+                                                                    class="form-check form-switch form-switch-sm form-check-custom form-check-solid">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" name="notifications"
+                                                                        checked="checked" />
+                                                                    <label class="form-check-label">Enabled</label>
+                                                                </div>
+                                                                <!--end::Switch-->
+                                                            </div>
+                                                            <!--end::Input group-->
+                                                            <!--begin::Actions-->
+                                                            <div class="d-flex justify-content-end">
+                                                                <button type="reset"
+                                                                    class="btn btn-sm btn-light btn-active-light-primary me-2"
+                                                                    data-kt-menu-dismiss="true">Reset</button>
+                                                                <button type="submit" class="btn btn-sm btn-primary"
+                                                                    data-kt-menu-dismiss="true">Apply</button>
+                                                            </div>
+                                                            <!--end::Actions-->
+                                                        </div>
+                                                        <!--end::Form-->
+                                                    </div>
+                                                    <!--end::Menu 1-->
+                                                    <!--end::Menu-->
+                                                </div>
+                                            </div>
+                                            <!--end::Header-->
+                                            <!--begin::Body-->
+                                            <div class="card-body pt-5">
+                                                <!--begin::Timeline-->
+                                                <div class="timeline-label">
+                                                    <!--begin::Item-->
+                                                    <div class="timeline-item">
+                                                        <!--begin::Label-->
+                                                        <div class="timeline-label fw-bold text-gray-800 fs-6">08:42</div>
+                                                        <!--end::Label-->
+                                                        <!--begin::Badge-->
+                                                        <div class="timeline-badge">
+                                                            <i class="fa fa-genderless text-warning fs-1"></i>
+                                                        </div>
+                                                        <!--end::Badge-->
+                                                        <!--begin::Text-->
+                                                        <div class="fw-mormal timeline-content text-muted ps-3">Outlines
+                                                            keep you honest. And keep structure</div>
+                                                        <!--end::Text-->
+                                                    </div>
+                                                    <!--end::Item-->
+                                                    <!--begin::Item-->
+                                                    <div class="timeline-item">
+                                                        <!--begin::Label-->
+                                                        <div class="timeline-label fw-bold text-gray-800 fs-6">10:00</div>
+                                                        <!--end::Label-->
+                                                        <!--begin::Badge-->
+                                                        <div class="timeline-badge">
+                                                            <i class="fa fa-genderless text-success fs-1"></i>
+                                                        </div>
+                                                        <!--end::Badge-->
+                                                        <!--begin::Content-->
+                                                        <div class="timeline-content d-flex">
+                                                            <span class="fw-bold text-gray-800 ps-3">AEOL meeting</span>
+                                                        </div>
+                                                        <!--end::Content-->
+                                                    </div>
+                                                    <!--end::Item-->
+                                                    <!--begin::Item-->
+                                                    <div class="timeline-item">
+                                                        <!--begin::Label-->
+                                                        <div class="timeline-label fw-bold text-gray-800 fs-6">14:37</div>
+                                                        <!--end::Label-->
+                                                        <!--begin::Badge-->
+                                                        <div class="timeline-badge">
+                                                            <i class="fa fa-genderless text-danger fs-1"></i>
+                                                        </div>
+                                                        <!--end::Badge-->
+                                                        <!--begin::Desc-->
+                                                        <div class="timeline-content fw-bold text-gray-800 ps-3">Make
+                                                            deposit
+                                                            <a href="#" class="text-primary">USD 700</a>. to ESL
+                                                        </div>
+                                                        <!--end::Desc-->
+                                                    </div>
+                                                    <!--end::Item-->
+                                                    <!--begin::Item-->
+                                                    <div class="timeline-item">
+                                                        <!--begin::Label-->
+                                                        <div class="timeline-label fw-bold text-gray-800 fs-6">16:50</div>
+                                                        <!--end::Label-->
+                                                        <!--begin::Badge-->
+                                                        <div class="timeline-badge">
+                                                            <i class="fa fa-genderless text-primary fs-1"></i>
+                                                        </div>
+                                                        <!--end::Badge-->
+                                                        <!--begin::Text-->
+                                                        <div class="timeline-content fw-mormal text-muted ps-3">Indulging
+                                                            in poorly driving and keep structure keep great</div>
+                                                        <!--end::Text-->
+                                                    </div>
+                                                    <!--end::Item-->
+                                                    <!--begin::Item-->
+                                                    <div class="timeline-item">
+                                                        <!--begin::Label-->
+                                                        <div class="timeline-label fw-bold text-gray-800 fs-6">21:03</div>
+                                                        <!--end::Label-->
+                                                        <!--begin::Badge-->
+                                                        <div class="timeline-badge">
+                                                            <i class="fa fa-genderless text-danger fs-1"></i>
+                                                        </div>
+                                                        <!--end::Badge-->
+                                                        <!--begin::Desc-->
+                                                        <div class="timeline-content fw-semibold text-gray-800 ps-3">New
+                                                            order placed
+                                                            <a href="#" class="text-primary">#XF-2356</a>.
+                                                        </div>
+                                                        <!--end::Desc-->
+                                                    </div>
+                                                    <!--end::Item-->
+                                                    <!--begin::Item-->
+                                                    <div class="timeline-item">
+                                                        <!--begin::Label-->
+                                                        <div class="timeline-label fw-bold text-gray-800 fs-6">16:50</div>
+                                                        <!--end::Label-->
+                                                        <!--begin::Badge-->
+                                                        <div class="timeline-badge">
+                                                            <i class="fa fa-genderless text-primary fs-1"></i>
+                                                        </div>
+                                                        <!--end::Badge-->
+                                                        <!--begin::Text-->
+                                                        <div class="timeline-content fw-mormal text-muted ps-3">Indulging
+                                                            in poorly driving and keep structure keep great</div>
+                                                        <!--end::Text-->
+                                                    </div>
+                                                    <!--end::Item-->
+                                                    <!--begin::Item-->
+                                                    <div class="timeline-item">
+                                                        <!--begin::Label-->
+                                                        <div class="timeline-label fw-bold text-gray-800 fs-6">21:03</div>
+                                                        <!--end::Label-->
+                                                        <!--begin::Badge-->
+                                                        <div class="timeline-badge">
+                                                            <i class="fa fa-genderless text-danger fs-1"></i>
+                                                        </div>
+                                                        <!--end::Badge-->
+                                                        <!--begin::Desc-->
+                                                        <div class="timeline-content fw-semibold text-gray-800 ps-3">New
+                                                            order placed
+                                                            <a href="#" class="text-primary">#XF-2356</a>.
+                                                        </div>
+                                                        <!--end::Desc-->
+                                                    </div>
+                                                    <!--end::Item-->
+                                                    <!--begin::Item-->
+                                                    <div class="timeline-item">
+                                                        <!--begin::Label-->
+                                                        <div class="timeline-label fw-bold text-gray-800 fs-6">10:30</div>
+                                                        <!--end::Label-->
+                                                        <!--begin::Badge-->
+                                                        <div class="timeline-badge">
+                                                            <i class="fa fa-genderless text-success fs-1"></i>
+                                                        </div>
+                                                        <!--end::Badge-->
+                                                        <!--begin::Text-->
+                                                        <div class="timeline-content fw-mormal text-muted ps-3">Finance
+                                                            KPI Mobile app launch preparion meeting</div>
+                                                        <!--end::Text-->
+                                                    </div>
+                                                    <!--end::Item-->
+                                                </div>
+                                                <!--end::Timeline-->
+                                            </div>
+                                            <!--end: Card Body-->
+                                        </div>
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Row-->
                             </div>
                             <!--end::Content container-->
                         </div>
@@ -1506,7 +1014,8 @@
                                             <!--end::User-->
                                             <!--begin::User-->
                                             <div class="symbol symbol-circle symbol-25px">
-                                                <div class="symbol-label fs-8 fw-semibold bg-primary text-inverse-primary">
+                                                <div
+                                                    class="symbol-label fs-8 fw-semibold bg-primary text-inverse-primary">
                                                     A</div>
                                             </div>
                                             <!--end::User-->
@@ -1545,7 +1054,8 @@
                                             <!--end::User-->
                                             <!--begin::User-->
                                             <div class="symbol symbol-circle symbol-25px">
-                                                <div class="symbol-label fs-8 fw-semibold bg-success text-inverse-primary">
+                                                <div
+                                                    class="symbol-label fs-8 fw-semibold bg-success text-inverse-primary">
                                                     B</div>
                                             </div>
                                             <!--end::User-->
@@ -4110,6 +3620,494 @@
         <!--end::Modal dialog-->
     </div>
     <!--end::Modal - Create App-->
+    <!--begin::Modal - Offer A Deal-->
+    <div class="modal fade" id="kt_modal_offer_a_deal" tabindex="-1" aria-hidden="true">
+        <!--begin::Modal dialog-->
+        <div class="modal-dialog modal-dialog-centered mw-1000px">
+            <!--begin::Modal content-->
+            <div class="modal-content">
+                <!--begin::Modal header-->
+                <div class="modal-header py-7 d-flex justify-content-between">
+                    <!--begin::Modal title-->
+                    <h2>Offer a Deal</h2>
+                    <!--end::Modal title-->
+                    <!--begin::Close-->
+                    <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                        <i class="ki-duotone ki-cross fs-1">
+                            <span class="path1"></span>
+                            <span class="path2"></span>
+                        </i>
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <!--begin::Modal header-->
+                <!--begin::Modal body-->
+                <div class="modal-body scroll-y m-5">
+                    <!--begin::Stepper-->
+                    <div class="stepper stepper-links d-flex flex-column" id="kt_modal_offer_a_deal_stepper">
+                        <!--begin::Nav-->
+                        <div class="stepper-nav justify-content-center py-2">
+                            <!--begin::Step 1-->
+                            <div class="stepper-item me-5 me-md-15 current" data-kt-stepper-element="nav">
+                                <h3 class="stepper-title">Deal Type</h3>
+                            </div>
+                            <!--end::Step 1-->
+                            <!--begin::Step 2-->
+                            <div class="stepper-item me-5 me-md-15" data-kt-stepper-element="nav">
+                                <h3 class="stepper-title">Deal Details</h3>
+                            </div>
+                            <!--end::Step 2-->
+                            <!--begin::Step 3-->
+                            <div class="stepper-item me-5 me-md-15" data-kt-stepper-element="nav">
+                                <h3 class="stepper-title">Finance Settings</h3>
+                            </div>
+                            <!--end::Step 3-->
+                            <!--begin::Step 4-->
+                            <div class="stepper-item" data-kt-stepper-element="nav">
+                                <h3 class="stepper-title">Completed</h3>
+                            </div>
+                            <!--end::Step 4-->
+                        </div>
+                        <!--end::Nav-->
+                        <!--begin::Form-->
+                        <form class="mx-auto mw-500px w-100 pt-15 pb-10" novalidate="novalidate"
+                            id="kt_modal_offer_a_deal_form">
+                            <!--begin::Type-->
+                            <div class="current" data-kt-stepper-element="content">
+                                <!--begin::Wrapper-->
+                                <div class="w-100">
+                                    <!--begin::Heading-->
+                                    <div class="mb-13">
+                                        <!--begin::Title-->
+                                        <h2 class="mb-3">Deal Type</h2>
+                                        <!--end::Title-->
+                                        <!--begin::Description-->
+                                        <div class="text-muted fw-semibold fs-5">If you need more info, please check out
+                                            <a href="#" class="link-primary fw-bold">FAQ Page</a>.
+                                        </div>
+                                        <!--end::Description-->
+                                    </div>
+                                    <!--end::Heading-->
+                                    <!--begin::Input group-->
+                                    <div class="fv-row mb-15" data-kt-buttons="true">
+                                        <!--begin::Option-->
+                                        <label
+                                            class="btn btn-outline btn-outline-dashed btn-active-light-primary d-flex text-start p-6 mb-6 active">
+                                            <!--begin::Input-->
+                                            <input class="btn-check" type="radio" checked="checked"
+                                                name="offer_type" value="1" />
+                                            <!--end::Input-->
+                                            <!--begin::Label-->
+                                            <span class="d-flex">
+                                                <!--begin::Icon-->
+                                                <i class="ki-duotone ki-profile-circle fs-3hx">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                    <span class="path3"></span>
+                                                </i>
+                                                <!--end::Icon-->
+                                                <!--begin::Info-->
+                                                <span class="ms-4">
+                                                    <span class="fs-3 fw-bold text-gray-900 mb-2 d-block">Personal
+                                                        Deal</span>
+                                                    <span class="fw-semibold fs-4 text-muted">If you need more info,
+                                                        please check it out</span>
+                                                </span>
+                                                <!--end::Info-->
+                                            </span>
+                                            <!--end::Label-->
+                                        </label>
+                                        <!--end::Option-->
+                                        <!--begin::Option-->
+                                        <label
+                                            class="btn btn-outline btn-outline-dashed btn-active-light-primary d-flex text-start p-6">
+                                            <!--begin::Input-->
+                                            <input class="btn-check" type="radio" name="offer_type"
+                                                value="2" />
+                                            <!--end::Input-->
+                                            <!--begin::Label-->
+                                            <span class="d-flex">
+                                                <!--begin::Icon-->
+                                                <i class="ki-duotone ki-element-11 fs-3hx">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                    <span class="path3"></span>
+                                                    <span class="path4"></span>
+                                                </i>
+                                                <!--end::Icon-->
+                                                <!--begin::Info-->
+                                                <span class="ms-4">
+                                                    <span class="fs-3 fw-bold text-gray-900 mb-2 d-block">Corporate
+                                                        Deal</span>
+                                                    <span class="fw-semibold fs-4 text-muted">Create corporate account to
+                                                        manage users</span>
+                                                </span>
+                                                <!--end::Info-->
+                                            </span>
+                                            <!--end::Label-->
+                                        </label>
+                                        <!--end::Option-->
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Actions-->
+                                    <div class="d-flex justify-content-end">
+                                        <button type="button" class="btn btn-lg btn-primary"
+                                            data-kt-element="type-next">
+                                            <span class="indicator-label">Offer Details</span>
+                                            <span class="indicator-progress">Please wait...
+                                                <span
+                                                    class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                        </button>
+                                    </div>
+                                    <!--end::Actions-->
+                                </div>
+                                <!--end::Wrapper-->
+                            </div>
+                            <!--end::Type-->
+                            <!--begin::Details-->
+                            <div data-kt-stepper-element="content">
+                                <!--begin::Wrapper-->
+                                <div class="w-100">
+                                    <!--begin::Heading-->
+                                    <div class="mb-13">
+                                        <!--begin::Title-->
+                                        <h2 class="mb-3">Deal Details</h2>
+                                        <!--end::Title-->
+                                        <!--begin::Description-->
+                                        <div class="text-muted fw-semibold fs-5">If you need more info, please check out
+                                            <a href="#" class="link-primary fw-bold">FAQ Page</a>.
+                                        </div>
+                                        <!--end::Description-->
+                                    </div>
+                                    <!--end::Heading-->
+                                    <!--begin::Input group-->
+                                    <div class="fv-row mb-8">
+                                        <!--begin::Label-->
+                                        <label class="required fs-6 fw-semibold mb-2">Customer</label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <select class="form-select form-select-solid" data-control="select2"
+                                            data-placeholder="Select an option" name="details_customer">
+                                            <option></option>
+                                            <option value="1" selected="selected">Keenthemes</option>
+                                            <option value="2">CRM App</option>
+                                        </select>
+                                        <!--end::Input-->
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Input group-->
+                                    <div class="fv-row mb-8">
+                                        <!--begin::Label-->
+                                        <label class="required fs-6 fw-semibold mb-2">Deal Title</label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <input type="text" class="form-control form-control-solid"
+                                            placeholder="Enter Deal Title" name="details_title"
+                                            value="Marketing Campaign" />
+                                        <!--end::Input-->
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Input group-->
+                                    <div class="fv-row mb-8">
+                                        <!--begin::Label-->
+                                        <label class="fs-6 fw-semibold mb-2">Deal Description</label>
+                                        <!--end::Label-->
+                                        <!--begin::Label-->
+                                        <textarea class="form-control form-control-solid" rows="3" placeholder="Enter Deal Description"
+                                            name="details_description">Experience share market at your fingertips with TICK PRO stock investment mobile trading app</textarea>
+                                        <!--end::Label-->
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Input group-->
+                                    <div class="fv-row mb-8">
+                                        <label class="required fs-6 fw-semibold mb-2">Activation Date</label>
+                                        <div class="position-relative d-flex align-items-center">
+                                            <!--begin::Icon-->
+                                            <i class="ki-duotone ki-calendar-8 fs-2 position-absolute mx-4">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                                <span class="path4"></span>
+                                                <span class="path5"></span>
+                                                <span class="path6"></span>
+                                            </i>
+                                            <!--end::Icon-->
+                                            <!--begin::Datepicker-->
+                                            <input class="form-control form-control-solid ps-12"
+                                                placeholder="Pick date range" name="details_activation_date" />
+                                            <!--end::Datepicker-->
+                                        </div>
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Input group-->
+                                    <div class="fv-row mb-15">
+                                        <!--begin::Wrapper-->
+                                        <div class="d-flex flex-stack">
+                                            <!--begin::Label-->
+                                            <div class="me-5">
+                                                <label class="required fs-6 fw-semibold">Notifications</label>
+                                                <div class="fs-7 fw-semibold text-muted">Allow Notifications by Phone or
+                                                    Email</div>
+                                            </div>
+                                            <!--end::Label-->
+                                            <!--begin::Checkboxes-->
+                                            <div class="d-flex">
+                                                <!--begin::Checkbox-->
+                                                <label class="form-check form-check-custom form-check-solid me-10">
+                                                    <!--begin::Input-->
+                                                    <input class="form-check-input h-20px w-20px" type="checkbox"
+                                                        value="email" name="details_notifications[]" />
+                                                    <!--end::Input-->
+                                                    <!--begin::Label-->
+                                                    <span class="form-check-label fw-semibold">Email</span>
+                                                    <!--end::Label-->
+                                                </label>
+                                                <!--end::Checkbox-->
+                                                <!--begin::Checkbox-->
+                                                <label class="form-check form-check-custom form-check-solid">
+                                                    <!--begin::Input-->
+                                                    <input class="form-check-input h-20px w-20px" type="checkbox"
+                                                        value="phone" checked="checked"
+                                                        name="details_notifications[]" />
+                                                    <!--end::Input-->
+                                                    <!--begin::Label-->
+                                                    <span class="form-check-label fw-semibold">Phone</span>
+                                                    <!--end::Label-->
+                                                </label>
+                                                <!--end::Checkbox-->
+                                            </div>
+                                            <!--end::Checkboxes-->
+                                        </div>
+                                        <!--begin::Wrapper-->
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Actions-->
+                                    <div class="d-flex flex-stack">
+                                        <button type="button" class="btn btn-lg btn-light me-3"
+                                            data-kt-element="details-previous">Deal Type</button>
+                                        <button type="button" class="btn btn-lg btn-primary"
+                                            data-kt-element="details-next">
+                                            <span class="indicator-label">Financing</span>
+                                            <span class="indicator-progress">Please wait...
+                                                <span
+                                                    class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                        </button>
+                                    </div>
+                                    <!--end::Actions-->
+                                </div>
+                                <!--end::Wrapper-->
+                            </div>
+                            <!--end::Details-->
+                            <!--begin::Budget-->
+                            <div data-kt-stepper-element="content">
+                                <!--begin::Wrapper-->
+                                <div class="w-100">
+                                    <!--begin::Heading-->
+                                    <div class="mb-13">
+                                        <!--begin::Title-->
+                                        <h2 class="mb-3">Finance</h2>
+                                        <!--end::Title-->
+                                        <!--begin::Description-->
+                                        <div class="text-muted fw-semibold fs-5">If you need more info, please check out
+                                            <a href="#" class="link-primary fw-bold">FAQ Page</a>.
+                                        </div>
+                                        <!--end::Description-->
+                                    </div>
+                                    <!--end::Heading-->
+                                    <!--begin::Input group-->
+                                    <div class="fv-row mb-8">
+                                        <!--begin::Label-->
+                                        <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+                                            <span class="required">Setup Budget</span>
+                                            <span class="lh-1 ms-1" data-bs-toggle="popover" data-bs-trigger="hover"
+                                                data-bs-html="true"
+                                                data-bs-content="&lt;div class=&#039;p-4 rounded bg-light&#039;&gt; &lt;div class=&#039;d-flex flex-stack text-muted mb-4&#039;&gt; &lt;i class=&quot;ki-duotone ki-bank fs-3 me-3&quot;&gt;&lt;span class=&quot;path1&quot;&gt;&lt;/span&gt;&lt;span class=&quot;path2&quot;&gt;&lt;/span&gt;&lt;/i&gt; &lt;div class=&#039;fw-bold&#039;&gt;INCBANK **** 1245 STATEMENT&lt;/div&gt; &lt;/div&gt; &lt;div class=&#039;d-flex flex-stack fw-semibold text-gray-600&#039;&gt; &lt;div&gt;Amount&lt;/div&gt; &lt;div&gt;Transaction&lt;/div&gt; &lt;/div&gt; &lt;div class=&#039;separator separator-dashed my-2&#039;&gt;&lt;/div&gt; &lt;div class=&#039;d-flex flex-stack text-gray-900 fw-bold mb-2&#039;&gt; &lt;div&gt;USD345.00&lt;/div&gt; &lt;div&gt;KEENTHEMES*&lt;/div&gt; &lt;/div&gt; &lt;div class=&#039;d-flex flex-stack text-muted mb-2&#039;&gt; &lt;div&gt;USD75.00&lt;/div&gt; &lt;div&gt;Hosting fee&lt;/div&gt; &lt;/div&gt; &lt;div class=&#039;d-flex flex-stack text-muted&#039;&gt; &lt;div&gt;USD3,950.00&lt;/div&gt; &lt;div&gt;Payrol&lt;/div&gt; &lt;/div&gt; &lt;/div&gt;">
+                                                <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                    <span class="path3"></span>
+                                                </i>
+                                            </span>
+                                        </label>
+                                        <!--end::Label-->
+                                        <!--begin::Dialer-->
+                                        <div class="position-relative w-lg-250px" id="kt_modal_finance_setup"
+                                            data-kt-dialer="true" data-kt-dialer-min="50" data-kt-dialer-max="50000"
+                                            data-kt-dialer-step="100" data-kt-dialer-prefix="$"
+                                            data-kt-dialer-decimals="2">
+                                            <!--begin::Decrease control-->
+                                            <button type="button"
+                                                class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 start-0"
+                                                data-kt-dialer-control="decrease">
+                                                <i class="ki-duotone ki-minus-circle fs-1">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                </i>
+                                            </button>
+                                            <!--end::Decrease control-->
+                                            <!--begin::Input control-->
+                                            <input type="text" class="form-control form-control-solid border-0 ps-12"
+                                                data-kt-dialer-control="input" placeholder="Amount"
+                                                name="finance_setup" readonly="readonly" value="$50" />
+                                            <!--end::Input control-->
+                                            <!--begin::Increase control-->
+                                            <button type="button"
+                                                class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 end-0"
+                                                data-kt-dialer-control="increase">
+                                                <i class="ki-duotone ki-plus-circle fs-1">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                </i>
+                                            </button>
+                                            <!--end::Increase control-->
+                                        </div>
+                                        <!--end::Dialer-->
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Input group-->
+                                    <div class="fv-row mb-8">
+                                        <!--begin::Label-->
+                                        <label class="fs-6 fw-semibold mb-2">Budget Usage</label>
+                                        <!--end::Label-->
+                                        <!--begin::Row-->
+                                        <div class="row g-9" data-kt-buttons="true"
+                                            data-kt-buttons-target="[data-kt-button='true']">
+                                            <!--begin::Col-->
+                                            <div class="col-md-6 col-lg-12 col-xxl-6">
+                                                <!--begin::Option-->
+                                                <label
+                                                    class="btn btn-outline btn-outline-dashed btn-active-light-primary active d-flex text-start p-6"
+                                                    data-kt-button="true">
+                                                    <!--begin::Radio-->
+                                                    <span
+                                                        class="form-check form-check-custom form-check-solid form-check-sm align-items-start mt-1">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="finance_usage" value="1" checked="checked" />
+                                                    </span>
+                                                    <!--end::Radio-->
+                                                    <!--begin::Info-->
+                                                    <span class="ms-5">
+                                                        <span class="fs-4 fw-bold text-gray-800 mb-2 d-block">Precise
+                                                            Usage</span>
+                                                        <span class="fw-semibold fs-7 text-gray-600">Withdraw money to
+                                                            your bank account per transaction under $50,000 budget</span>
+                                                    </span>
+                                                    <!--end::Info-->
+                                                </label>
+                                                <!--end::Option-->
+                                            </div>
+                                            <!--end::Col-->
+                                            <!--begin::Col-->
+                                            <div class="col-md-6 col-lg-12 col-xxl-6">
+                                                <!--begin::Option-->
+                                                <label
+                                                    class="btn btn-outline btn-outline-dashed btn-active-light-primary d-flex text-start p-6"
+                                                    data-kt-button="true">
+                                                    <!--begin::Radio-->
+                                                    <span
+                                                        class="form-check form-check-custom form-check-solid form-check-sm align-items-start mt-1">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="finance_usage" value="2" />
+                                                    </span>
+                                                    <!--end::Radio-->
+                                                    <!--begin::Info-->
+                                                    <span class="ms-5">
+                                                        <span class="fs-4 fw-bold text-gray-800 mb-2 d-block">Extreme
+                                                            Usage</span>
+                                                        <span class="fw-semibold fs-7 text-gray-600">Withdraw money to
+                                                            your bank account per transaction under $50,000 budget</span>
+                                                    </span>
+                                                    <!--end::Info-->
+                                                </label>
+                                                <!--end::Option-->
+                                            </div>
+                                            <!--end::Col-->
+                                        </div>
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Input group-->
+                                    <div class="fv-row mb-15">
+                                        <!--begin::Wrapper-->
+                                        <div class="d-flex flex-stack">
+                                            <!--begin::Label-->
+                                            <div class="me-5">
+                                                <label class="fs-6 fw-semibold">Allow Changes in Budget</label>
+                                                <div class="fs-7 fw-semibold text-muted">If you need more info, please
+                                                    check budget planning</div>
+                                            </div>
+                                            <!--end::Label-->
+                                            <!--begin::Switch-->
+                                            <label class="form-check form-switch form-check-custom form-check-solid">
+                                                <input class="form-check-input" type="checkbox" value="1"
+                                                    name="finance_allow" checked="checked" />
+                                                <span class="form-check-label fw-semibold text-muted">Allowed</span>
+                                            </label>
+                                            <!--end::Switch-->
+                                        </div>
+                                        <!--end::Wrapper-->
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Actions-->
+                                    <div class="d-flex flex-stack">
+                                        <button type="button" class="btn btn-lg btn-light me-3"
+                                            data-kt-element="finance-previous">Project Settings</button>
+                                        <button type="button" class="btn btn-lg btn-primary"
+                                            data-kt-element="finance-next">
+                                            <span class="indicator-label">Build Team</span>
+                                            <span class="indicator-progress">Please wait...
+                                                <span
+                                                    class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                        </button>
+                                    </div>
+                                    <!--end::Actions-->
+                                </div>
+                                <!--end::Wrapper-->
+                            </div>
+                            <!--end::Budget-->
+                            <!--begin::Complete-->
+                            <div data-kt-stepper-element="content">
+                                <!--begin::Wrapper-->
+                                <div class="w-100">
+                                    <!--begin::Heading-->
+                                    <div class="mb-13">
+                                        <!--begin::Title-->
+                                        <h2 class="mb-3">Deal Created!</h2>
+                                        <!--end::Title-->
+                                        <!--begin::Description-->
+                                        <div class="text-muted fw-semibold fs-5">If you need more info, please check out
+                                            <a href="#" class="link-primary fw-bold">FAQ Page</a>.
+                                        </div>
+                                        <!--end::Description-->
+                                    </div>
+                                    <!--end::Heading-->
+                                    <!--begin::Actions-->
+                                    <div class="d-flex flex-center pb-20">
+                                        <button type="button" class="btn btn-lg btn-light me-3"
+                                            data-kt-element="complete-start">Create New Deal</button>
+                                        <a href="#" class="btn btn-lg btn-primary" data-bs-toggle="tooltip"
+                                            title="Coming Soon">View Deal</a>
+                                    </div>
+                                    <!--end::Actions-->
+                                    <!--begin::Illustration-->
+                                    <div class="text-center px-4">
+                                        <img src="assets/media/illustrations/sketchy-1/20.png" alt=""
+                                            class="mw-100 mh-300px" />
+                                    </div>
+                                    <!--end::Illustration-->
+                                </div>
+                            </div>
+                            <!--end::Complete-->
+                        </form>
+                        <!--end::Form-->
+                    </div>
+                    <!--end::Stepper-->
+                </div>
+                <!--begin::Modal body-->
+            </div>
+        </div>
+    </div>
+    <!--end::Modal - Offer A Deal-->
     <!--begin::Modal - Users Search-->
     <div class="modal fade" id="kt_modal_users_search" tabindex="-1" aria-hidden="true">
         <!--begin::Modal dialog-->
@@ -4946,15 +4944,16 @@
                                             <!--end::Checkbox-->
                                             <!--begin::Avatar-->
                                             <div class="symbol symbol-35px symbol-circle">
-                                                <img alt="Pic" src="assets/media/avatars/300-13.jpg" />
+                                                <span
+                                                    class="symbol-label bg-light-danger text-danger fw-semibold">E</span>
                                             </div>
                                             <!--end::Avatar-->
                                             <!--begin::Details-->
                                             <div class="ms-5">
                                                 <a href="#"
-                                                    class="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">John
-                                                    Miller</a>
-                                                <div class="fw-semibold text-muted">miller@mapple.com</div>
+                                                    class="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Emma
+                                                    Bold</a>
+                                                <div class="fw-semibold text-muted">emma@intenso.com</div>
                                             </div>
                                             <!--end::Details-->
                                         </div>
@@ -5550,14 +5549,14 @@
                                 <div class="d-flex align-items-center">
                                     <!--begin::Avatar-->
                                     <div class="symbol symbol-35px symbol-circle">
-                                        <span class="symbol-label bg-light-info text-info fw-semibold">A</span>
+                                        <span class="symbol-label bg-light-danger text-danger fw-semibold">O</span>
                                     </div>
                                     <!--end::Avatar-->
                                     <!--begin::Details-->
                                     <div class="ms-5">
                                         <a href="#"
-                                            class="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Robert Doe</a>
-                                        <div class="fw-semibold text-muted">robert@benko.com</div>
+                                            class="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Olivia Wild</a>
+                                        <div class="fw-semibold text-muted">olivia@corpmail.com</div>
                                     </div>
                                     <!--end::Details-->
                                 </div>
@@ -5601,7 +5600,5 @@
         </div>
         <!--end::Modal dialog-->
     </div>
-    <!--end::Modal - Invite Friend-->
-    <!--end::Modals-->
     @include('scripts._setting_script')
 @endsection

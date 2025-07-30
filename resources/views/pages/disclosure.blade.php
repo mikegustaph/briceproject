@@ -87,9 +87,9 @@
                                             <!--begin::Toolbar-->
                                             <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
                                                 <!--begin::Add customer-->
-                                                <a type="button" class="btn btn-primary"
-                                                    href="{{ URL::to('disclosure-create') }}">Add
-                                                    Disclosure</a>
+                                                <button type="button" class="btn btn-primary"
+                                                    href="{{ URL::to('disclosure-create') }}" disabled>Add
+                                                    Disclosure</button>
                                                 <!--end::Add customer-->
                                             </div>
                                             <!--end::Toolbar-->
@@ -104,6 +104,7 @@
                                                     data-kt-customer-table-select="delete_selected">Delete
                                                     Selected</button>
                                             </div>
+
                                             <!--end::Group actions-->
                                         </div>
                                         <!--end::Card toolbar-->

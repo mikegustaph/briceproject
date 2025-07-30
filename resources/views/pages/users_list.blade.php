@@ -345,92 +345,79 @@
                                                                 value="1" />
                                                         </div>
                                                     </th>
-                                                    <th class="min-w-125px">User</th>
+                                                    <th class="min-w-125px">Username</th>
                                                     <th class="min-w-125px">Email</th>
                                                     <th class="min-w-125px">Phone</th>
                                                     <th class="min-w-125px">Position</th>
-                                                    <th class="min-w-125px">Created Date</th>
                                                     <th class="min-w-125px">Status</th>
                                                     <th class="text-end min-w-70px">Actions</th>
                                                 </tr>
                                             </thead>
                                             <tbody class="fw-semibold text-gray-600">
-                                                <tr>
-                                                    <td>
-                                                        <div
-                                                            class="form-check form-check-sm form-check-custom form-check-solid">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                value="1" />
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <!--begin:: Avatar -->
+                                                @foreach ($users as $user)
+                                                    <tr>
+                                                        <td>
                                                             <div
-                                                                class="symbol symbol-circle symbol-50px overflow-hidden me-3">
-                                                                <a href="apps/user-management/users/view.html">
-                                                                    <div
-                                                                        class="symbol-label fs-3 bg-light-primary text-primary">
-                                                                        N</div>
-                                                                </a>
+                                                                class="form-check form-check-sm form-check-custom form-check-solid">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="1" />
                                                             </div>
-                                                            <!--end::Avatar-->
-                                                            <div class="ms-5">
-                                                                <!--begin::Title-->
-                                                                <a href="apps/user-management/users/view.html"
-                                                                    class="text-gray-800 text-hover-primary fs-5 fw-bold">Neil
-                                                                    Owen</a>
-                                                                <!--end::Title-->
+                                                        </td>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="">
+                                                                    <!--begin::Title-->
+                                                                    <a href="#"
+                                                                        class="text-gray-800 text-hover-primary fs-5 fw-bold">{{ $user->username }}</a>
+                                                                    <!--end::Title-->
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#"
-                                                            class="text-gray-600 text-hover-primary mb-1">smith@kpmg.com</a>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#"
-                                                            class="text-gray-600 text-hover-primary mb-1">0656122491</a>
-                                                    </td>
-                                                    <td data-filter="mastercard">
-                                                        <p class="text-gray-800 text-hover-primary mb-1">Senior Accountant
-                                                        </p>
-                                                    </td>
-                                                    <td>
-                                                        <p class="text-gray-800 text-hover-primary mb-1">
-                                                            14 Dec 2020, 8:43 pm</p>
-                                                    </td>
-                                                    <td class="text-start pe-0" data-order="Denied">
-                                                        <!--begin::Badges-->
-                                                        <div class="badge badge-light-danger">Denied</div>
-                                                        <!--end::Badges-->
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <a href="#"
-                                                            class="btn btn-sm btn-light btn-flex btn-center btn-active-light-primary"
-                                                            data-kt-menu-trigger="click"
-                                                            data-kt-menu-placement="bottom-end">Actions
-                                                            <i class="ki-duotone ki-down fs-5 ms-1"></i></a>
-                                                        <!--begin::Menu-->
-                                                        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4"
-                                                            data-kt-menu="true">
-                                                            <!--begin::Menu item-->
-                                                            <div class="menu-item px-3">
-                                                                <a href="apps/customers/view.html"
-                                                                    class="menu-link px-3">View</a>
-                                                            </div>
-                                                            <!--end::Menu item-->
-                                                            <!--begin::Menu item-->
-                                                            <div class="menu-item px-3">
-                                                                <a href="#" class="menu-link px-3"
-                                                                    data-kt-customer-table-filter="delete_row">Delete</a>
-                                                            </div>
-                                                            <!--end::Menu item-->
-                                                        </div>
-                                                        <!--end::Menu-->
-                                                    </td>
-                                                </tr>
+                                                        </td>
+                                                        <td>
+                                                            <a href="mailto:{{ $user->email }}"
+                                                                class="text-gray-600 text-hover-primary mb-1">{{ $user->email }}</a>
+                                                        </td>
+                                                        <td>
+                                                            <a href="#"
+                                                                class="text-gray-600 text-hover-primary mb-1">{{ $user->phone }}</a>
+                                                        </td>
+                                                        <td data-filter="mastercard">
+                                                            <p class="text-gray-800 text-hover-primary mb-1">
+                                                                {{ $user->position }}</p>
+                                                            </p>
+                                                        </td>
 
+                                                        <td class="text-start pe-0" data-order="Denied">
+                                                            <!--begin::Badges-->
+                                                            <div class="badge badge-light-success">Active</div>
+                                                            <!--end::Badges-->
+                                                        </td>
+                                                        <td class="text-end">
+                                                            <a href="#"
+                                                                class="btn btn-sm btn-light btn-flex btn-center btn-active-light-primary"
+                                                                data-kt-menu-trigger="click"
+                                                                data-kt-menu-placement="bottom-end">Actions
+                                                                <i class="ki-duotone ki-down fs-5 ms-1"></i></a>
+                                                            <!--begin::Menu-->
+                                                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4"
+                                                                data-kt-menu="true">
+                                                                <!--begin::Menu item-->
+                                                                <div class="menu-item px-3">
+                                                                    <a href="{{ url('/user-profile/' . $user->id) }}"
+                                                                        class="menu-link px-3">View</a>
+                                                                </div>
+                                                                <!--end::Menu item-->
+                                                                <!--begin::Menu item-->
+                                                                <div class="menu-item px-3">
+                                                                    <a href="#" class="menu-link px-3"
+                                                                        data-kt-customer-table-filter="delete_row">Delete</a>
+                                                                </div>
+                                                                <!--end::Menu item-->
+                                                            </div>
+                                                            <!--end::Menu-->
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                         <!--end::Table-->

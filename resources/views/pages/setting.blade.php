@@ -199,7 +199,7 @@
                                                     <i class="ki-duotone ki-compass fs-2 me-2">
                                                         <span class="path1"></span>
                                                         <span class="path2"></span>
-                                                    </i>Localization</a>
+                                                    </i>Loan Settings</a>
                                             </li>
                                             <!--end:::Tab item-->
                                             <!--begin:::Tab item-->
@@ -210,7 +210,7 @@
                                                         <span class="path1"></span>
                                                         <span class="path2"></span>
                                                         <span class="path3"></span>
-                                                    </i>Products</a>
+                                                    </i>Modules</a>
                                             </li>
                                             <!--end:::Tab item-->
                                             <!--begin:::Tab item-->
@@ -269,6 +269,49 @@
                                                         </div>
                                                     </div>
                                                     <!--end::Input group-->
+                                                    <div class="row fv-row mb-7">
+                                                        <!--begin::Col-->
+                                                        <div class="col-md-3 text-md-end">
+                                                                <label class="fs-6 fw-semibold form-label mt-3">
+                                                                <span class="required">Allow Notification</span>
+                                                                <span class="ms-1" data-bs-toggle="tooltip"
+                                                                    title="Set the title of the store for SEO.">
+                                                                    <i
+                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                        <span class="path1"></span>
+                                                                        <span class="path2"></span>
+                                                                        <span class="path3"></span>
+                                                                    </i>
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                        <!--end::Col-->
+                                                        <!--begin::Col-->
+                                                        <div class="col-md-9">
+                                                            <!--begin::Switch-->
+                                                            <div class="form-check form-switch form-check-custom form-check-solid">
+                                                                <input class="form-check-input" type="checkbox" value="" id="allowchanges" checked="checked" />
+                                                                <!--<label class="form-check-label fw-semibold text-gray-500 ms-3" for="allowchanges">Allowed</label>-->
+                                                            </div>
+                                                            <!--end::Switch-->
+                                                        </div>
+                                                        <!--end::Col-->
+												    </div>
+                                                    <script type="text/javascript">
+                                                        function saveNotificationSetting(sub){
+                                                            $.ajax({
+                                                                type: 'post',
+                                                                url: '{{ URL('save-push-notify') }}',
+                                                                data: {
+                                                                    '_token': "{{ csrf_token() }}",
+                                                                    'sub': sub
+                                                                },
+                                                                success:function(){
+                                                                    console.log();
+                                                                }
+                                                            });
+                                                        }
+                                                    </script>
                                                     <!--begin::Input group-->
                                                     <div class="row fv-row mb-7">
                                                         <div class="col-md-3 text-md-end">
@@ -617,16 +660,20 @@
                                                 <!--end::Form-->
                                             </div>
                                             <!--end:::Tab pane-->
+                                            <!--*********************Loan Settings*********************8-->
                                             <!--begin:::Tab pane-->
                                             <div class="tab-pane fade" id="kt_ecommerce_settings_localization"
                                                 role="tabpanel">
                                                 <!--begin::Form-->
-                                                <form id="kt_ecommerce_settings_general_localization" class="form"
-                                                    action="#">
+                                                <form method="POST" id="kt_ecommerce_settings_general_localization"
+                                                    class="form"
+                                                    action="{{ url('/loan_setting/' . ($loansetting->id ?? null)) }}">
+                                                    @csrf
+                                                    @method('post')
                                                     <!--begin::Heading-->
                                                     <div class="row mb-7">
                                                         <div class="col-md-9 offset-md-3">
-                                                            <h2>Localization Settings</h2>
+                                                            <h2>Loan Settings </h2>
                                                         </div>
                                                     </div>
                                                     <!--end::Heading-->
@@ -635,13 +682,16 @@
                                                         <div class="col-md-3 text-md-end">
                                                             <!--begin::Label-->
                                                             <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span class="required">Country</span>
+                                                                <span class="required">Interest Rate (%)</span>
                                                             </label>
                                                             <!--end::Label-->
                                                         </div>
                                                         <div class="col-md-9">
                                                             <!--begin::Select2-->
-                                                            @include('widget.country')
+                                                            <input type="text" class="form-control form-control-solid"
+                                                                placeholder="Interest Rate"
+                                                                value="{{ $loansetting->interest_rate ?? null }}"
+                                                                name="interest" required />
                                                             <!--end::Select2-->
                                                         </div>
                                                     </div>
@@ -651,121 +701,86 @@
                                                         <div class="col-md-3 text-md-end">
                                                             <!--begin::Label-->
                                                             <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span class="required">Language</span>
+                                                                <span class="required">Service Charges(%)</span>
                                                             </label>
                                                             <!--end::Label-->
                                                         </div>
                                                         <div class="col-md-9">
                                                             <div class="w-100">
                                                                 <!--begin::Select2-->
-                                                                @include('widget.country')
+                                                                <input type="text"
+                                                                    class="form-control form-control-solid"
+                                                                    placeholder="Service Charge"
+                                                                    value="{{ $loansetting->service_charge ?? null }}"
+                                                                    name="service_charge" required />
                                                                 <!--end::Select2-->
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <!--end::Input group-->
-                                                    <!--begin::Input group-->
                                                     <div class="row fv-row mb-7">
                                                         <div class="col-md-3 text-md-end">
                                                             <!--begin::Label-->
                                                             <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span class="required">Currency</span>
+                                                                <span class="required">Period</span>
                                                             </label>
                                                             <!--end::Label-->
                                                         </div>
-                                                        <div class="col-md-9">
-                                                            <div class="w-100">
+                                                        <div class="fs-6 col-md-9">
+                                                            <div class="w-100 mt-5">
                                                                 <!--begin::Select2-->
-                                                                <select class="form-select form-select-solid"
-                                                                    name="localization_currency" data-control="select2"
-                                                                    data-hide-search="true"
-                                                                    data-placeholder="Select a currency">
-                                                                    <option></option>
-                                                                    <option value="USD">US Dollar</option>
-                                                                    <option value="Euro">Euro</option>
-                                                                    <option value="Pound">Pound</option>
-                                                                    <option value="AUD">Australian Dollar</option>
-                                                                    <option value="JPY">Japanese Yen</option>
-                                                                    <option value="KRW">Korean Won</option>
-                                                                </select>
+                                                                @php
+                                                                    $periodArray = explode(
+                                                                        ',',
+                                                                        $loansetting->periods ?? '',
+                                                                    );
+                                                                    //print_r($periodArray);
+                                                                @endphp
+                                                                <div
+                                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                                    <div class="pr-2">
+                                                                        <input name="period[]" class="form-check-input"
+                                                                            type="checkbox" value="7"
+                                                                            {{ in_array('7', $periodArray) ? 'checked' : '' }} />
+                                                                        7 Days
+                                                                    </div>
+                                                                </div>
+                                                                <br>
+                                                                <div
+                                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                                    <div class="pr-2">
+                                                                        <input name="period[]" class="form-check-input"
+                                                                            type="checkbox" value="14"
+                                                                            {{ in_array('14', $periodArray) ? 'checked' : '' }} />
+                                                                        14 Days
+
+                                                                    </div>
+                                                                </div>
+                                                                <br>
+                                                                <div
+                                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                                    <div class="pr-2">
+                                                                        <input name="period[]" class="form-check-input"
+                                                                            type="checkbox" value="28"
+                                                                            {{ in_array('28', $periodArray) ? 'checked' : '' }} />
+                                                                        28 Days
+
+                                                                    </div>
+                                                                </div>
+                                                                <br>
+                                                                <div
+                                                                    class="form-check form-check-sm form-check-custom form-check-solid">
+                                                                    <div class="pr-2">
+                                                                        <input name="period[]" class="form-check-input"
+                                                                            type="checkbox" value="35"
+                                                                            {{ in_array('35', $periodArray) ? 'checked' : '' }} />
+                                                                        35 Days
+                                                                    </div>
+                                                                </div>
                                                                 <!--end::Select2-->
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span>Length Class</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Set the unit measurement for length.">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <div class="w-100">
-                                                                <!--begin::Select2-->
-                                                                <select class="form-select form-select-solid"
-                                                                    name="localization_currency" data-control="select2"
-                                                                    data-hide-search="true"
-                                                                    data-placeholder="Select a length class">
-                                                                    <option></option>
-                                                                    <option value="cm" selected="selected">Centimeter
-                                                                    </option>
-                                                                    <option value="mm">Milimeter</option>
-                                                                    <option value="in">Inch</option>
-                                                                </select>
-                                                                <!--end::Select2-->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Input group-->
-                                                    <div class="row fv-row mb-7">
-                                                        <div class="col-md-3 text-md-end">
-                                                            <!--begin::Label-->
-                                                            <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span>Weight Class</span>
-                                                                <span class="ms-1" data-bs-toggle="tooltip"
-                                                                    title="Set the unit measurement for weight.">
-                                                                    <i
-                                                                        class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                        <span class="path3"></span>
-                                                                    </i>
-                                                                </span>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <div class="col-md-9">
-                                                            <div class="w-100">
-                                                                <!--begin::Select2-->
-                                                                <select class="form-select form-select-solid"
-                                                                    name="localization_currency" data-control="select2"
-                                                                    data-hide-search="true"
-                                                                    data-placeholder="Select a weight class">
-                                                                    <option></option>
-                                                                    <option value="kg" selected="selected">Kilogram
-                                                                    </option>
-                                                                    <option value="g">Gram</option>
-                                                                    <option value="lb">Pound</option>
-                                                                    <option value="oz">Ounce</option>
-                                                                </select>
-                                                                <!--end::Select2-->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Input group-->
                                                     <!--begin::Action buttons-->
                                                     <div class="row py-5">
                                                         <div class="col-md-9 offset-md-3">
@@ -776,13 +791,8 @@
                                                                     class="btn btn-light me-3">Cancel</button>
                                                                 <!--end::Button-->
                                                                 <!--begin::Button-->
-                                                                <button type="submit"
-                                                                    data-kt-ecommerce-settings-type="submit"
-                                                                    class="btn btn-primary">
+                                                                <button type="submit" class="btn btn-primary">
                                                                     <span class="indicator-label">Save</span>
-                                                                    <span class="indicator-progress">Please wait...
-                                                                        <span
-                                                                            class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                                                                 </button>
                                                                 <!--end::Button-->
                                                             </div>
@@ -802,7 +812,7 @@
                                                     <!--begin::Heading-->
                                                     <div class="row mb-7">
                                                         <div class="col-md-9 offset-md-3">
-                                                            <h2>Cateogries Settings</h2>
+                                                            <h2>Loan Approval</h2>
                                                         </div>
                                                     </div>
                                                     <!--end::Heading-->
@@ -811,7 +821,7 @@
                                                         <div class="col-md-3 text-md-end">
                                                             <!--begin::Label-->
                                                             <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span>Category Product Count</span>
+                                                                <span>Loan Request Approval</span>
                                                                 <span class="ms-1" data-bs-toggle="tooltip"
                                                                     title="Show the number of products inside the subcategories in the storefront header category menu. Be warned, this will cause an extreme performance hit for stores with a lot of subcategories!">
                                                                     <i
@@ -830,18 +840,18 @@
                                                                 <div
                                                                     class="form-check form-check-custom form-check-solid me-5">
                                                                     <input class="form-check-input" type="radio"
-                                                                        value="" name="category_product_count"
+                                                                        value="auto" name="loan_approval"
                                                                         id="category_product_count_yes"
                                                                         checked="checked" />
                                                                     <label class="form-check-label"
-                                                                        for="category_product_count_yes">Yes</label>
+                                                                        for="category_product_count_yes">Auto</label>
                                                                 </div>
                                                                 <div class="form-check form-check-custom form-check-solid">
                                                                     <input class="form-check-input" type="radio"
-                                                                        value="" name="category_product_count"
+                                                                        value="manual" name="loan_approval"
                                                                         id="category_product_count_no" />
                                                                     <label class="form-check-label"
-                                                                        for="category_product_count_no">No</label>
+                                                                        for="category_product_count_no">Manual</label>
                                                                 </div>
                                                                 <!--end::Radio-->
                                                             </div>
@@ -853,7 +863,7 @@
                                                         <div class="col-md-3 text-md-end">
                                                             <!--begin::Label-->
                                                             <label class="fs-6 fw-semibold form-label mt-3">
-                                                                <span class="required">Default Items Per Page</span>
+                                                                <span class="required">Loan Request Limit</span>
                                                                 <span class="ms-1" data-bs-toggle="tooltip"
                                                                     title="Determines how many items are shown per page.">
                                                                     <i
@@ -869,7 +879,7 @@
                                                         <div class="col-md-9">
                                                             <!--begin::Input-->
                                                             <input type="text" class="form-control form-control-solid"
-                                                                name="products_items_per_page" value="10" />
+                                                                name="products_items_per_page" value="10000" />
                                                             <!--end::Input-->
                                                         </div>
                                                     </div>
@@ -910,8 +920,7 @@
                                                                     <label class="form-check-label"
                                                                         for="allow_reviews_yes">Yes</label>
                                                                 </div>
-                                                                <div
-                                                                    class="form-check form-check-custom form-check-solid">
+                                                                <div class="form-check form-check-custom form-check-solid">
                                                                     <input class="form-check-input" type="radio"
                                                                         value="" name="allow_reviews"
                                                                         id="allow_reviews_no" />
@@ -952,8 +961,7 @@
                                                                     <label class="form-check-label"
                                                                         for="allow_guest_reviews_yes">Yes</label>
                                                                 </div>
-                                                                <div
-                                                                    class="form-check form-check-custom form-check-solid">
+                                                                <div class="form-check form-check-custom form-check-solid">
                                                                     <input class="form-check-input" type="radio"
                                                                         value="" name="allow_guest_reviews"
                                                                         id="allow_guest_reviews_no" checked="checked" />
@@ -992,8 +1000,7 @@
                                                         </div>
                                                         <div class="col-md-9">
                                                             <!--begin::Input-->
-                                                            <input type="text"
-                                                                class="form-control form-control-solid"
+                                                            <input type="text" class="form-control form-control-solid"
                                                                 name="products_min_voucher" value="1" />
                                                             <!--end::Input-->
                                                         </div>
@@ -1019,8 +1026,7 @@
                                                         </div>
                                                         <div class="col-md-9">
                                                             <!--begin::Input-->
-                                                            <input type="text"
-                                                                class="form-control form-control-solid"
+                                                            <input type="text" class="form-control form-control-solid"
                                                                 name="products_max_voucher" value="10" />
                                                             <!--end::Input-->
                                                         </div>
@@ -1053,8 +1059,7 @@
                                                                     <label class="form-check-label"
                                                                         for="product_tax_yes">Yes</label>
                                                                 </div>
-                                                                <div
-                                                                    class="form-check form-check-custom form-check-solid">
+                                                                <div class="form-check form-check-custom form-check-solid">
                                                                     <input class="form-check-input" type="radio"
                                                                         value="" name="product_tax"
                                                                         id="product_tax_no" />
@@ -1086,8 +1091,7 @@
                                                         </div>
                                                         <div class="col-md-9">
                                                             <!--begin::Input-->
-                                                            <input type="text"
-                                                                class="form-control form-control-solid"
+                                                            <input type="text" class="form-control form-control-solid"
                                                                 name="products_tax_rate" value="15%" />
                                                             <!--end::Input-->
                                                         </div>
@@ -1162,8 +1166,7 @@
                                                                     <label class="form-check-label"
                                                                         for="customers_online_yes">Yes</label>
                                                                 </div>
-                                                                <div
-                                                                    class="form-check form-check-custom form-check-solid">
+                                                                <div class="form-check form-check-custom form-check-solid">
                                                                     <input class="form-check-input" type="radio"
                                                                         value="" name="customers_online"
                                                                         id="customers_online_no" />
@@ -1204,8 +1207,7 @@
                                                                     <label class="form-check-label"
                                                                         for="customers_activity_yes">Yes</label>
                                                                 </div>
-                                                                <div
-                                                                    class="form-check form-check-custom form-check-solid">
+                                                                <div class="form-check form-check-custom form-check-solid">
                                                                     <input class="form-check-input" type="radio"
                                                                         value="" name="customers_activity"
                                                                         id="customers_activity_no" />
@@ -1246,8 +1248,7 @@
                                                                     <label class="form-check-label"
                                                                         for="customers_searches_yes">Yes</label>
                                                                 </div>
-                                                                <div
-                                                                    class="form-check form-check-custom form-check-solid">
+                                                                <div class="form-check form-check-custom form-check-solid">
                                                                     <input class="form-check-input" type="radio"
                                                                         value="" name="customers_searches"
                                                                         id="customers_searches_no" />
@@ -1288,8 +1289,7 @@
                                                                     <label class="form-check-label"
                                                                         for="customers_guest_checkout_yes">Yes</label>
                                                                 </div>
-                                                                <div
-                                                                    class="form-check form-check-custom form-check-solid">
+                                                                <div class="form-check form-check-custom form-check-solid">
                                                                     <input class="form-check-input" type="radio"
                                                                         value="" name="customers_guest_checkout"
                                                                         id="customers_guest_checkout_no"
@@ -1331,8 +1331,7 @@
                                                                     <label class="form-check-label"
                                                                         for="customers_login_prices_yes">Yes</label>
                                                                 </div>
-                                                                <div
-                                                                    class="form-check form-check-custom form-check-solid">
+                                                                <div class="form-check form-check-custom form-check-solid">
                                                                     <input class="form-check-input" type="radio"
                                                                         value="" name="customers_login_prices"
                                                                         id="customers_login_prices_no"
@@ -1365,8 +1364,7 @@
                                                         </div>
                                                         <div class="col-md-9">
                                                             <!--begin::Input-->
-                                                            <input type="text"
-                                                                class="form-control form-control-solid"
+                                                            <input type="text" class="form-control form-control-solid"
                                                                 name="customer_login_attempts" value="" />
                                                             <!--end::Input-->
                                                         </div>
@@ -1518,8 +1516,7 @@
                                             <!--end::User-->
                                             <!--begin::User-->
                                             <div class="symbol symbol-circle symbol-25px">
-                                                <div
-                                                    class="symbol-label fs-8 fw-semibold bg-primary text-inverse-primary">
+                                                <div class="symbol-label fs-8 fw-semibold bg-primary text-inverse-primary">
                                                     A</div>
                                             </div>
                                             <!--end::User-->
@@ -1558,8 +1555,7 @@
                                             <!--end::User-->
                                             <!--begin::User-->
                                             <div class="symbol symbol-circle symbol-25px">
-                                                <div
-                                                    class="symbol-label fs-8 fw-semibold bg-success text-inverse-primary">
+                                                <div class="symbol-label fs-8 fw-semibold bg-success text-inverse-primary">
                                                     B</div>
                                             </div>
                                             <!--end::User-->

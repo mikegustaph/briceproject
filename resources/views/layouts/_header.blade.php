@@ -843,8 +843,8 @@
                                         data-bs-toggle="tab" href="#kt_topbar_notifications_1">Alerts</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-white opacity-75 opacity-state-100 pb-4 active"
-                                        data-bs-toggle="tab" href="#kt_topbar_notifications_2">Updates</a>
+                                    <a class="nav-link text-white opacity-75 opacity-state-100 pb-4"
+                                        data-bs-toggle="tab" href="#kt_topbar_notifications_2">Update</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-white opacity-75 opacity-state-100 pb-4"
@@ -1096,40 +1096,246 @@
                                 <!--end::View more-->
                             </div>
                             <!--end::Tab panel-->
-                            <!--begin::Tab panel-->
-                            <div class="tab-pane fade show active" id="kt_topbar_notifications_2" role="tabpanel">
-                                <!--begin::Wrapper-->
-                                <div class="d-flex flex-column px-9">
-                                    <!--begin::Section-->
-                                    <div class="pt-10 pb-0">
-                                        <!--begin::Title-->
-                                        <h3 class="text-gray-900 text-center fw-bold">Get Pro Access</h3>
-                                        <!--end::Title-->
-                                        <!--begin::Text-->
-                                        <div class="text-center text-gray-600 fw-semibold pt-1">Outlines keep you
-                                            honest. They stoping you from amazing poorly about drive</div>
-                                        <!--end::Text-->
-                                        <!--begin::Action-->
-                                        <div class="text-center mt-5 mb-9">
-                                            <a href="#" class="btn btn-sm btn-primary px-6"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#kt_modal_upgrade_plan">Upgrade</a>
+                            <div class="tab-pane fade" id="kt_topbar_notifications_2" role="tabpane1">
+                                <!--begin::Items-->
+                                <div class="scroll-y mh-325px my-5 px-8">
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-stack py-4">
+                                        <!--begin::Section-->
+                                        <div class="d-flex align-items-center">
+                                            <!--begin::Symbol-->
+                                            <div class="symbol symbol-35px me-4">
+                                                <span class="symbol-label bg-light-primary">
+                                                    <i class="ki-duotone ki-abstract-28 fs-2 text-primary">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                    </i>
+                                                </span>
+                                            </div>
+                                            <!--end::Symbol-->
+                                            <!--begin::Title-->
+                                            <div class="mb-0 me-2">
+                                                <a href="#"
+                                                    class="fs-6 text-gray-800 text-hover-primary fw-bold">Project
+                                                    Alice</a>
+                                                <div class="text-gray-500 fs-7">Phase 1 development</div>
+                                            </div>
+                                            <!--end::Title-->
                                         </div>
-                                        <!--end::Action-->
+                                        <!--end::Section-->
+                                        <!--begin::Label-->
+                                        <span class="badge badge-light fs-8">1 hr</span>
+                                        <!--end::Label-->
                                     </div>
-                                    <!--end::Section-->
-                                    <!--begin::Illustration-->
-                                    <div class="text-center px-4">
-                                        <img class="mw-100 mh-200px" alt="image"
-                                            src="assets/media/illustrations/sketchy-1/1.png" />
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-stack py-4">
+                                        <!--begin::Section-->
+                                        <div class="d-flex align-items-center">
+                                            <!--begin::Symbol-->
+                                            <div class="symbol symbol-35px me-4">
+                                                <span class="symbol-label bg-light-danger">
+                                                    <i class="ki-duotone ki-information fs-2 text-danger">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                        <span class="path3"></span>
+                                                    </i>
+                                                </span>
+                                            </div>
+                                            <!--end::Symbol-->
+                                            <!--begin::Title-->
+                                            <div class="mb-0 me-2">
+                                                <a href="#"
+                                                    class="fs-6 text-gray-800 text-hover-primary fw-bold">HR
+                                                    Confidential</a>
+                                                <div class="text-gray-500 fs-7">Confidential staff documents</div>
+                                            </div>
+                                            <!--end::Title-->
+                                        </div>
+                                        <!--end::Section-->
+                                        <!--begin::Label-->
+                                        <span class="badge badge-light fs-8">2 hrs</span>
+                                        <!--end::Label-->
                                     </div>
-                                    <!--end::Illustration-->
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-stack py-4">
+                                        <!--begin::Section-->
+                                        <div class="d-flex align-items-center">
+                                            <!--begin::Symbol-->
+                                            <div class="symbol symbol-35px me-4">
+                                                <span class="symbol-label bg-light-warning">
+                                                    <i class="ki-duotone ki-briefcase fs-2 text-warning">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                    </i>
+                                                </span>
+                                            </div>
+                                            <!--end::Symbol-->
+                                            <!--begin::Title-->
+                                            <div class="mb-0 me-2">
+                                                <a href="#"
+                                                    class="fs-6 text-gray-800 text-hover-primary fw-bold">Company
+                                                    HR</a>
+                                                <div class="text-gray-500 fs-7">Corporeate staff profiles</div>
+                                            </div>
+                                            <!--end::Title-->
+                                        </div>
+                                        <!--end::Section-->
+                                        <!--begin::Label-->
+                                        <span class="badge badge-light fs-8">5 hrs</span>
+                                        <!--end::Label-->
+                                    </div>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-stack py-4">
+                                        <!--begin::Section-->
+                                        <div class="d-flex align-items-center">
+                                            <!--begin::Symbol-->
+                                            <div class="symbol symbol-35px me-4">
+                                                <span class="symbol-label bg-light-success">
+                                                    <i class="ki-duotone ki-abstract-12 fs-2 text-success">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                    </i>
+                                                </span>
+                                            </div>
+                                            <!--end::Symbol-->
+                                            <!--begin::Title-->
+                                            <div class="mb-0 me-2">
+                                                <a href="#"
+                                                    class="fs-6 text-gray-800 text-hover-primary fw-bold">Project
+                                                    Redux</a>
+                                                <div class="text-gray-500 fs-7">New frontend admin theme</div>
+                                            </div>
+                                            <!--end::Title-->
+                                        </div>
+                                        <!--end::Section-->
+                                        <!--begin::Label-->
+                                        <span class="badge badge-light fs-8">2 days</span>
+                                        <!--end::Label-->
+                                    </div>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-stack py-4">
+                                        <!--begin::Section-->
+                                        <div class="d-flex align-items-center">
+                                            <!--begin::Symbol-->
+                                            <div class="symbol symbol-35px me-4">
+                                                <span class="symbol-label bg-light-primary">
+                                                    <i class="ki-duotone ki-colors-square fs-2 text-primary">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                        <span class="path3"></span>
+                                                        <span class="path4"></span>
+                                                    </i>
+                                                </span>
+                                            </div>
+                                            <!--end::Symbol-->
+                                            <!--begin::Title-->
+                                            <div class="mb-0 me-2">
+                                                <a href="#"
+                                                    class="fs-6 text-gray-800 text-hover-primary fw-bold">Project
+                                                    Breafing</a>
+                                                <div class="text-gray-500 fs-7">Product launch status update</div>
+                                            </div>
+                                            <!--end::Title-->
+                                        </div>
+                                        <!--end::Section-->
+                                        <!--begin::Label-->
+                                        <span class="badge badge-light fs-8">21 Jan</span>
+                                        <!--end::Label-->
+                                    </div>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-stack py-4">
+                                        <!--begin::Section-->
+                                        <div class="d-flex align-items-center">
+                                            <!--begin::Symbol-->
+                                            <div class="symbol symbol-35px me-4">
+                                                <span class="symbol-label bg-light-info">
+                                                    <i class="ki-duotone ki-picture fs-2 text-info"></i>
+                                                </span>
+                                            </div>
+                                            <!--end::Symbol-->
+                                            <!--begin::Title-->
+                                            <div class="mb-0 me-2">
+                                                <a href="#"
+                                                    class="fs-6 text-gray-800 text-hover-primary fw-bold">Banner
+                                                    Assets</a>
+                                                <div class="text-gray-500 fs-7">Collection of banner images</div>
+                                            </div>
+                                            <!--end::Title-->
+                                        </div>
+                                        <!--end::Section-->
+                                        <!--begin::Label-->
+                                        <span class="badge badge-light fs-8">21 Jan</span>
+                                        <!--end::Label-->
+                                    </div>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <div class="d-flex flex-stack py-4">
+                                        <!--begin::Section-->
+                                        <div class="d-flex align-items-center">
+                                            <!--begin::Symbol-->
+                                            <div class="symbol symbol-35px me-4">
+                                                <span class="symbol-label bg-light-warning">
+                                                    <i class="ki-duotone ki-color-swatch fs-2 text-warning">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                        <span class="path3"></span>
+                                                        <span class="path4"></span>
+                                                        <span class="path5"></span>
+                                                        <span class="path6"></span>
+                                                        <span class="path7"></span>
+                                                        <span class="path8"></span>
+                                                        <span class="path9"></span>
+                                                        <span class="path10"></span>
+                                                        <span class="path11"></span>
+                                                        <span class="path12"></span>
+                                                        <span class="path13"></span>
+                                                        <span class="path14"></span>
+                                                        <span class="path15"></span>
+                                                        <span class="path16"></span>
+                                                        <span class="path17"></span>
+                                                        <span class="path18"></span>
+                                                        <span class="path19"></span>
+                                                        <span class="path20"></span>
+                                                        <span class="path21"></span>
+                                                    </i>
+                                                </span>
+                                            </div>
+                                            <!--end::Symbol-->
+                                            <!--begin::Title-->
+                                            <div class="mb-0 me-2">
+                                                <a href="#"
+                                                    class="fs-6 text-gray-800 text-hover-primary fw-bold">Icon
+                                                    Assets</a>
+                                                <div class="text-gray-500 fs-7">Collection of SVG icons</div>
+                                            </div>
+                                            <!--end::Title-->
+                                        </div>
+                                        <!--end::Section-->
+                                        <!--begin::Label-->
+                                        <span class="badge badge-light fs-8">20 March</span>
+                                        <!--end::Label-->
+                                    </div>
+                                    <!--end::Item-->
                                 </div>
-                                <!--end::Wrapper-->
+                                <!--end::Items-->
+                                <!--begin::View more-->
+                                <div class="py-3 text-center border-top">
+                                    <a href="pages/user-profile/activity.html"
+                                        class="btn btn-color-gray-600 btn-active-color-primary">View All
+                                        <i class="ki-duotone ki-arrow-right fs-5">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                        </i></a>
+                                </div>
+                                <!--end::View more-->
                             </div>
-                            <!--end::Tab panel-->
                             <!--begin::Tab panel-->
-                            <div class="tab-pane fade" id="kt_topbar_notifications_3" role="tabpanel">
+                            <div class="tab-pane fade" id="kt_topbar_notifications_3" role="tabpane1">
                                 <!--begin::Items-->
                                 <div class="scroll-y mh-325px my-5 px-8">
                                     <!--begin::Item-->
@@ -1393,310 +1599,8 @@
                 <!--begin::My apps links-->
                 <div class="app-navbar-item ms-1 ms-md-4">
                     <!--begin::Menu wrapper-->
-                    <div class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px"
-                        data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent"
-                        data-kt-menu-placement="bottom-end">
-                        <i class="ki-duotone ki-element-11 fs-2">
-                            <span class="path1"></span>
-                            <span class="path2"></span>
-                            <span class="path3"></span>
-                            <span class="path4"></span>
-                        </i>
-                    </div>
-                    <!--begin::My apps-->
-                    <div class="menu menu-sub menu-sub-dropdown menu-column w-100 w-sm-350px" data-kt-menu="true">
-                        <!--begin::Card-->
-                        <div class="card">
-                            <!--begin::Card header-->
-                            <div class="card-header">
-                                <!--begin::Card title-->
-                                <div class="card-title">My Apps</div>
-                                <!--end::Card title-->
-                                <!--begin::Card toolbar-->
-                                <div class="card-toolbar">
-                                    <!--begin::Menu-->
-                                    <button type="button" class="btn btn-sm btn-icon btn-active-light-primary me-n3"
-                                        data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
-                                        data-kt-menu-placement="bottom-end">
-                                        <i class="ki-duotone ki-setting-3 fs-2">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                            <span class="path3"></span>
-                                            <span class="path4"></span>
-                                            <span class="path5"></span>
-                                        </i>
-                                    </button>
-                                    <!--begin::Menu 3-->
-                                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px py-3"
-                                        data-kt-menu="true">
-                                        <!--begin::Heading-->
-                                        <div class="menu-item px-3">
-                                            <div class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">
-                                                Payments</div>
-                                        </div>
-                                        <!--end::Heading-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3">Create Invoice</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link flex-stack px-3">Create Payment
-                                                <span class="ms-2" data-bs-toggle="tooltip"
-                                                    title="Specify a target name for future usage and reference">
-                                                    <i class="ki-duotone ki-information fs-6">
-                                                        <span class="path1"></span>
-                                                        <span class="path2"></span>
-                                                        <span class="path3"></span>
-                                                    </i>
-                                                </span></a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3">Generate Bill</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3" data-kt-menu-trigger="hover"
-                                            data-kt-menu-placement="right-end">
-                                            <a href="#" class="menu-link px-3">
-                                                <span class="menu-title">Subscription</span>
-                                                <span class="menu-arrow"></span>
-                                            </a>
-                                            <!--begin::Menu sub-->
-                                            <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="#" class="menu-link px-3">Plans</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="#" class="menu-link px-3">Billing</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="#" class="menu-link px-3">Statements</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu separator-->
-                                                <div class="separator my-2"></div>
-                                                <!--end::Menu separator-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <div class="menu-content px-3">
-                                                        <!--begin::Switch-->
-                                                        <label
-                                                            class="form-check form-switch form-check-custom form-check-solid">
-                                                            <!--begin::Input-->
-                                                            <input class="form-check-input w-30px h-20px"
-                                                                type="checkbox" value="1" checked="checked"
-                                                                name="notifications" />
-                                                            <!--end::Input-->
-                                                            <!--end::Label-->
-                                                            <span
-                                                                class="form-check-label text-muted fs-6">Recuring</span>
-                                                            <!--end::Label-->
-                                                        </label>
-                                                        <!--end::Switch-->
-                                                    </div>
-                                                </div>
-                                                <!--end::Menu item-->
-                                            </div>
-                                            <!--end::Menu sub-->
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3 my-1">
-                                            <a href="#" class="menu-link px-3">Settings</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                    </div>
-                                    <!--end::Menu 3-->
-                                    <!--end::Menu-->
-                                </div>
-                                <!--end::Card toolbar-->
-                            </div>
-                            <!--end::Card header-->
-                            <!--begin::Card body-->
-                            <div class="card-body py-5">
-                                <!--begin::Scroll-->
-                                <div class="mh-450px scroll-y me-n5 pe-5">
-                                    <!--begin::Row-->
-                                    <div class="row g-2">
-                                        <!--begin::Col-->
-                                        <div class="col-4">
-                                            <a href="#"
-                                                class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="assets/media/svg/brand-logos/amazon.svg"
-                                                    class="w-25px h-25px mb-2" alt="" />
-                                                <span class="fw-semibold">AWS</span>
-                                            </a>
-                                        </div>
-                                        <!--end::Col-->
-                                        <!--begin::Col-->
-                                        <div class="col-4">
-                                            <a href="#"
-                                                class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="assets/media/svg/brand-logos/angular-icon-1.svg"
-                                                    class="w-25px h-25px mb-2" alt="" />
-                                                <span class="fw-semibold">AngularJS</span>
-                                            </a>
-                                        </div>
-                                        <!--end::Col-->
-                                        <!--begin::Col-->
-                                        <div class="col-4">
-                                            <a href="#"
-                                                class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="assets/media/svg/brand-logos/atica.svg"
-                                                    class="w-25px h-25px mb-2" alt="" />
-                                                <span class="fw-semibold">Atica</span>
-                                            </a>
-                                        </div>
-                                        <!--end::Col-->
-                                        <!--begin::Col-->
-                                        <div class="col-4">
-                                            <a href="#"
-                                                class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="assets/media/svg/brand-logos/beats-electronics.svg"
-                                                    class="w-25px h-25px mb-2" alt="" />
-                                                <span class="fw-semibold">Music</span>
-                                            </a>
-                                        </div>
-                                        <!--end::Col-->
-                                        <!--begin::Col-->
-                                        <div class="col-4">
-                                            <a href="#"
-                                                class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="assets/media/svg/brand-logos/codeigniter.svg"
-                                                    class="w-25px h-25px mb-2" alt="" />
-                                                <span class="fw-semibold">Codeigniter</span>
-                                            </a>
-                                        </div>
-                                        <!--end::Col-->
-                                        <!--begin::Col-->
-                                        <div class="col-4">
-                                            <a href="#"
-                                                class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="assets/media/svg/brand-logos/bootstrap-4.svg"
-                                                    class="w-25px h-25px mb-2" alt="" />
-                                                <span class="fw-semibold">Bootstrap</span>
-                                            </a>
-                                        </div>
-                                        <!--end::Col-->
-                                        <!--begin::Col-->
-                                        <div class="col-4">
-                                            <a href="#"
-                                                class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="assets/media/svg/brand-logos/google-tag-manager.svg"
-                                                    class="w-25px h-25px mb-2" alt="" />
-                                                <span class="fw-semibold">GTM</span>
-                                            </a>
-                                        </div>
-                                        <!--end::Col-->
-                                        <!--begin::Col-->
-                                        <div class="col-4">
-                                            <a href="#"
-                                                class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="assets/media/svg/brand-logos/disqus.svg"
-                                                    class="w-25px h-25px mb-2" alt="" />
-                                                <span class="fw-semibold">Disqus</span>
-                                            </a>
-                                        </div>
-                                        <!--end::Col-->
-                                        <!--begin::Col-->
-                                        <div class="col-4">
-                                            <a href="#"
-                                                class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="assets/media/svg/brand-logos/dribbble-icon-1.svg"
-                                                    class="w-25px h-25px mb-2" alt="" />
-                                                <span class="fw-semibold">Dribble</span>
-                                            </a>
-                                        </div>
-                                        <!--end::Col-->
-                                        <!--begin::Col-->
-                                        <div class="col-4">
-                                            <a href="#"
-                                                class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="assets/media/svg/brand-logos/google-play-store.svg"
-                                                    class="w-25px h-25px mb-2" alt="" />
-                                                <span class="fw-semibold">Play Store</span>
-                                            </a>
-                                        </div>
-                                        <!--end::Col-->
-                                        <!--begin::Col-->
-                                        <div class="col-4">
-                                            <a href="#"
-                                                class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="assets/media/svg/brand-logos/google-podcasts.svg"
-                                                    class="w-25px h-25px mb-2" alt="" />
-                                                <span class="fw-semibold">Podcasts</span>
-                                            </a>
-                                        </div>
-                                        <!--end::Col-->
-                                        <!--begin::Col-->
-                                        <div class="col-4">
-                                            <a href="#"
-                                                class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="assets/media/svg/brand-logos/figma-1.svg"
-                                                    class="w-25px h-25px mb-2" alt="" />
-                                                <span class="fw-semibold">Figma</span>
-                                            </a>
-                                        </div>
-                                        <!--end::Col-->
-                                        <!--begin::Col-->
-                                        <div class="col-4">
-                                            <a href="#"
-                                                class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="assets/media/svg/brand-logos/github.svg"
-                                                    class="w-25px h-25px mb-2" alt="" />
-                                                <span class="fw-semibold">Github</span>
-                                            </a>
-                                        </div>
-                                        <!--end::Col-->
-                                        <!--begin::Col-->
-                                        <div class="col-4">
-                                            <a href="#"
-                                                class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="assets/media/svg/brand-logos/gitlab.svg"
-                                                    class="w-25px h-25px mb-2" alt="" />
-                                                <span class="fw-semibold">Gitlab</span>
-                                            </a>
-                                        </div>
-                                        <!--end::Col-->
-                                        <!--begin::Col-->
-                                        <div class="col-4">
-                                            <a href="#"
-                                                class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="assets/media/svg/brand-logos/instagram-2-1.svg"
-                                                    class="w-25px h-25px mb-2" alt="" />
-                                                <span class="fw-semibold">Instagram</span>
-                                            </a>
-                                        </div>
-                                        <!--end::Col-->
-                                        <!--begin::Col-->
-                                        <div class="col-4">
-                                            <a href="#"
-                                                class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                <img src="assets/media/svg/brand-logos/pinterest-p.svg"
-                                                    class="w-25px h-25px mb-2" alt="" />
-                                                <span class="fw-semibold">Pinterest</span>
-                                            </a>
-                                        </div>
-                                        <!--end::Col-->
-                                    </div>
-                                    <!--end::Row-->
-                                </div>
-                                <!--end::Scroll-->
-                            </div>
-                            <!--end::Card body-->
-                        </div>
-                        <!--end::Card-->
-                    </div>
-                    <!--end::My apps-->
+
+
                     <!--end::Menu wrapper-->
                 </div>
                 <!--end::My apps links-->
@@ -1805,11 +1709,12 @@
                                 <!--end::Avatar-->
                                 <!--begin::Username-->
                                 <div class="d-flex flex-column">
-                                    <div class="fw-bold d-flex align-items-center fs-5">Robert Fox
+                                    <div class="fw-bold d-flex align-items-center fs-5">{{ Auth::user()->first_name }}
+                                        {{ Auth::user()->last_name }}
                                         <span class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">Pro</span>
                                     </div>
                                     <a href="#"
-                                        class="fw-semibold text-muted text-hover-primary fs-7">robert@kt.com</a>
+                                        class="fw-semibold text-muted text-hover-primary fs-7">{{ Auth::user()->email }}</a>
                                 </div>
                                 <!--end::Username-->
                             </div>
@@ -1820,83 +1725,11 @@
                         <!--end::Menu separator-->
                         <!--begin::Menu item-->
                         <div class="menu-item px-5">
-                            <a href="account/overview.html" class="menu-link px-5">My Profile</a>
+                            @php
+                                $userId = auth()->user()->id ?? null;
+                            @endphp
+                            <a href="{{ URL::to('user-profile/' . $userId) }}" class="menu-link px-5">My Profile</a>
                         </div>
-                        <!--end::Menu item-->
-                        <!--begin::Menu item-->
-                        <div class="menu-item px-5">
-                            <a href="apps/projects/list.html" class="menu-link px-5">
-                                <span class="menu-text">My Projects</span>
-                                <span class="menu-badge">
-                                    <span class="badge badge-light-danger badge-circle fw-bold fs-7">3</span>
-                                </span>
-                            </a>
-                        </div>
-                        <!--end::Menu item-->
-                        <!--begin::Menu item-->
-                        <div class="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
-                            data-kt-menu-placement="left-start" data-kt-menu-offset="-15px, 0">
-                            <a href="#" class="menu-link px-5">
-                                <span class="menu-title">My Subscription</span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <!--begin::Menu sub-->
-                            <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <a href="account/referrals.html" class="menu-link px-5">Referrals</a>
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <a href="account/billing.html" class="menu-link px-5">Billing</a>
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <a href="account/statements.html" class="menu-link px-5">Payments</a>
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <a href="account/statements.html"
-                                        class="menu-link d-flex flex-stack px-5">Statements
-                                        <span class="ms-2 lh-0" data-bs-toggle="tooltip"
-                                            title="View your statements">
-                                            <i class="ki-duotone ki-information-5 fs-5">
-                                                <span class="path1"></span>
-                                                <span class="path2"></span>
-                                                <span class="path3"></span>
-                                            </i>
-                                        </span></a>
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu separator-->
-                                <div class="separator my-2"></div>
-                                <!--end::Menu separator-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <div class="menu-content px-3">
-                                        <label class="form-check form-switch form-check-custom form-check-solid">
-                                            <input class="form-check-input w-30px h-20px" type="checkbox"
-                                                value="1" checked="checked" name="notifications" />
-                                            <span class="form-check-label text-muted fs-7">Notifications</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <!--end::Menu item-->
-                            </div>
-                            <!--end::Menu sub-->
-                        </div>
-                        <!--end::Menu item-->
-                        <!--begin::Menu item-->
-                        <div class="menu-item px-5">
-                            <a href="account/statements.html" class="menu-link px-5">My Statements</a>
-                        </div>
-                        <!--end::Menu item-->
-                        <!--begin::Menu separator-->
-                        <div class="separator my-2"></div>
-                        <!--end::Menu separator-->
                         <!--begin::Menu item-->
                         <div class="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
                             data-kt-menu-placement="left-start" data-kt-menu-offset="-15px, 0">
@@ -1988,8 +1821,7 @@
                                     <span
                                         class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">English
                                         <img class="w-15px h-15px rounded-1 ms-2"
-                                            src="assets/media/flags/united-states.svg"
-                                            alt="" /></span></span>
+                                            src="assets/media/flags/united-states.svg" alt="" /></span></span>
                             </a>
                             <!--begin::Menu sub-->
                             <div class="menu-sub menu-sub-dropdown w-175px py-4">
@@ -2006,52 +1838,39 @@
                                 <div class="menu-item px-3">
                                     <a href="account/settings.html" class="menu-link d-flex px-5">
                                         <span class="symbol symbol-20px me-4">
-                                            <img class="rounded-1" src="assets/media/flags/spain.svg"
+                                            <img class="rounded-1" src="assets/media/flags/tanzania.svg"
                                                 alt="" />
-                                        </span>Spanish</a>
+                                        </span>Kiswahili</a>
                                 </div>
                                 <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <a href="account/settings.html" class="menu-link d-flex px-5">
-                                        <span class="symbol symbol-20px me-4">
-                                            <img class="rounded-1" src="assets/media/flags/germany.svg"
-                                                alt="" />
-                                        </span>German</a>
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <a href="account/settings.html" class="menu-link d-flex px-5">
-                                        <span class="symbol symbol-20px me-4">
-                                            <img class="rounded-1" src="assets/media/flags/japan.svg"
-                                                alt="" />
-                                        </span>Japanese</a>
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <a href="account/settings.html" class="menu-link d-flex px-5">
-                                        <span class="symbol symbol-20px me-4">
-                                            <img class="rounded-1" src="assets/media/flags/france.svg"
-                                                alt="" />
-                                        </span>French</a>
-                                </div>
-                                <!--end::Menu item-->
+
                             </div>
                             <!--end::Menu sub-->
                         </div>
                         <!--end::Menu item-->
                         <!--begin::Menu item-->
                         <div class="menu-item px-5 my-1">
-                            <a href="account/settings.html" class="menu-link px-5">Account Settings</a>
+                            <a href="{{ URL::to('setting') }}" class="menu-link px-5">Account Settings</a>
                         </div>
                         <!--end::Menu item-->
+                        <!--begin::Menu separator-->
+                        <div class="separator my-2"></div>
+                        <!--end::Menu separator-->
                         <!--begin::Menu item-->
-                        <div class="menu-item px-5">
-                            <a href="authentication/layouts/corporate/sign-in.html" class="menu-link px-5">Sign
+                        <!--<div class="menu-item px-5">
+                            <a href="" class="menu-link px-5">Sign
                                 Out</a>
+                        </div>-->
+                        <div class="menu-item px-5">
+                            <a href="#" class="menu-link px-5"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                Sign Out
+                            </a>
                         </div>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                         <!--end::Menu item-->
                     </div>
                     <!--end::User account menu-->

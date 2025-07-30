@@ -13,26 +13,25 @@ return new class extends Migration
     {
         Schema::create('customer', function (Blueprint $table) {
             $table->id();
-            $table->string('first_name');
-            $table->string('middle_name');
-            $table->string('last_name');
+            $table->string('first_name')->nullable();
+            $table->string('middle_name')->nullable();
+            $table->string('last_name')->nullable();
             $table->enum('sex', ['male', 'female'])->default('male');
-            $table->date('Date_of_birth');
             $table->string('phone');
-            $table->string('email', 100)->unique()->nullable();
-            $table->string('nida_number', 20);
-            $table->string('region', 50);
-            $table->string('address', 100);
-            $table->string('current_location', 100);
-            $table->enum('Education', ['Kinder garten', 'Primary school', 'Seconday school', 'High school', 'Diploma/Certificate', 'Bachelor Degree', 'Master Degree', 'Doctorate Degree/PHD', 'Other']);
-            $table->enum('Marital_status', ['Single', 'Married', 'Divorced', 'Widowed']);
-            $table->string('Address');
-            $table->string('district');
-            $table->string('Region');
-            $table->string('Exist_loan');
+            $table->string('email', 100)->nullable();
+            $table->string('nida_number', 20)->nullable();
+            $table->string('Address', 100)->nullable();
+            $table->string('District')->nullable();
+            $table->string('Region', 50)->nullable();
+            $table->enum('Occupation', ['Business', 'Farming', 'Job'])->default('Business');
             $table->string('customer_image', 150)->nullable();
             $table->string('customer_id_card', 150)->nullable();
-            //$table->enum('Work_status', ['Business', ]);
+            $table->decimal('credit_score', 4, 2)->default(0.5);
+            $table->string('referee_one_name')->nullable();
+            $table->string('referee_one_phone')->nullable();
+            $table->string('referee_two_name')->nullable();
+            $table->string('referee_two_phone')->nullable();
+            $table->enum('status', ['Registered', 'Not_Registered', 'Banned'])->default('Not_Registered');
             $table->timestamps();
         });
     }

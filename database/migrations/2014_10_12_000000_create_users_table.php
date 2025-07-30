@@ -20,6 +20,17 @@ return new class extends Migration
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
+            $table->string('profile_image');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('phone');
+            $table->enum('gender', ['Male', 'Female'])->default('Male');
+            $table->date('birthday');
+            $table->enum('role', ['Admin', 'Staff'])->default('Admin');
+            $table->enum('position', ['Admin', 'Loan officer', 'Secretary'])->default('Loan Officer');
+            $table->string('cv');
+            $table->string('address');
+            $table->string('username');
             $table->timestamps();
         });
     }

@@ -50,7 +50,45 @@
                                     <!--end::Breadcrumb-->
                                 </div>
                                 <!--end::Page title-->
+                                @if (session('status') === 'success')
+                                    <div class="alert alert-success d-flex align-items-center p-5">
+                                        <!--begin::Icon-->
+                                        <i class="ki-duotone ki-shield-tick fs-2hx text-success me-4"><span
+                                                class="path1"></span><span class="path2"></span></i>
+                                        <div class="d-flex flex-column">
+                                            <h4 class="mb-1 light">Success</h4>
+                                            <span>{{ session('message') }}</span>
+                                            <!--end::Content-->
+                                        </div>
+                                    </div>
+                                @elseif (session('status') === 'error')
+                                    <div class="alert alert-danger d-flex align-items-center p-5">
+                                        <i class="ki-duotone ki-shield-tick fs-2hx text-danger me-4"><span
+                                                class="path1"></span><span class="path2"></span></i>
+                                        <div class="d-flex flex-column">
+                                            <h4 class="mb-1 text-rose-600">Error</h4>
+                                            <span>{{ session('message') }}</span>
+                                        </div>
+                                    </div>
+                                @endif
 
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+
+                                <script type="text/javascript">
+                                    $(document).ready(function() {
+                                        setTimeout(function() {
+                                            $('.alert').fadeOut('slow');
+                                        }, 5000);
+                                    });
+                                </script>
                             </div>
                             <!--end::Toolbar container-->
                         </div>
@@ -65,7 +103,10 @@
                                     <!--begin::Content-->
                                     <div id="kt_account_settings_profile_details" class="collapse show">
                                         <!--begin::Form-->
-                                        <form id="kt_account_profile_details_form" class="form" method="POST">
+                                        <form id="kt_account_profile_details_form"
+                                            action="{{ url('/support-delete' . $supportedt->item) }}" class="form"
+                                            method="POST" enctype="multipart/form-data">
+                                            @csrf
                                             <!--begin::Card body-->
                                             <div class="card-body p-9">
                                                 <!--begin::Input group-->
@@ -85,9 +126,9 @@
                                                     <!--end::Label-->
                                                     <!--begin::Col-->
                                                     <div class="col-lg-8 fv-row">
-                                                        <input type="text" name="disclosure"
+                                                        <input type="text" name="name"
                                                             class="form-control form-control-lg form-control-solid"
-                                                            placeholder="Title " />
+                                                            placeholder="Title " value="{{ $supportedt->title }}" />
                                                     </div>
                                                     <!--end::Col-->
                                                 </div>
@@ -110,8 +151,9 @@
                                                     <!--end::Label-->
                                                     <!--begin::Col-->
                                                     <div class="col-lg-8 fv-row">
-                                                        <textarea type="text" name="description" class="form-control form-control-lg form-control-solid"
-                                                            placeholder="Description"></textarea>
+                                                        <input type="text" name="description"
+                                                            class="form-control form-control-lg form-control-solid"
+                                                            placeholder="Title " value="{{ $supportedt->description }}" />
                                                     </div>
                                                     <!--end::Col-->
                                                 </div>

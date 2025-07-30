@@ -49,12 +49,52 @@
                                     </ul>
                                     <!--end::Breadcrumb-->
                                 </div>
-                                <!--end::Page title-->
+                                @if (session('status') === 'success')
+                                    <div class="alert alert-success d-flex align-items-center p-5">
+                                        <!--begin::Icon-->
+                                        <i class="ki-duotone ki-shield-tick fs-2hx text-success me-4"><span
+                                                class="path1"></span><span class="path2"></span></i>
+                                        <div class="d-flex flex-column">
+                                            <h4 class="mb-1 light">Success</h4>
+                                            <span>{{ session('message') }}</span>
+                                            <!--end::Content-->
+                                        </div>
+                                    </div>
+                                @elseif (session('status') === 'error')
+                                    <div class="alert alert-danger d-flex align-items-center p-5">
+                                        <i class="ki-duotone ki-shield-tick fs-2hx text-danger me-4"><span
+                                                class="path1"></span><span class="path2"></span></i>
+                                        <div class="d-flex flex-column">
+                                            <h4 class="mb-1 text-rose-600">Error</h4>
+                                            <span>{{ session('message') }}</span>
+                                        </div>
+                                    </div>
+                                @endif
 
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+
+                                <script type="text/javascript">
+                                    $(document).ready(function() {
+                                        setTimeout(function() {
+                                            $('.alert').fadeOut('slow');
+                                        }, 5000);
+                                    });
+                                </script>
+                                <!--end::Page title-->
                             </div>
                             <!--end::Toolbar container-->
+
                         </div>
                         <!--end::Toolbar-->
+
                         <!--begin::Content-->
                         <div id="kt_app_content" class="app-content flex-column-fluid">
                             <!--begin::Content container-->
@@ -65,7 +105,10 @@
                                     <!--begin::Content-->
                                     <div id="kt_account_settings_profile_details" class="collapse show">
                                         <!--begin::Form-->
-                                        <form id="kt_account_profile_details_form" class="form" method="POST">
+                                        <form id="kt_account_profile_details_form" action="{{ url('/create-new-role') }}"
+                                            class="form" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            @method('post')
                                             <!--begin::Card body-->
                                             <div class="card-body p-9">
                                                 <!--begin::Input group-->
@@ -85,9 +128,9 @@
                                                     <!--end::Label-->
                                                     <!--begin::Col-->
                                                     <div class="col-lg-8 fv-row">
-                                                        <input type="text" name="role"
+                                                        <input type="text" name="rolename"
                                                             class="form-control form-control-lg form-control-solid"
-                                                            placeholder="Role Name" />
+                                                            placeholder="Role Name" required />
                                                     </div>
                                                     <!--end::Col-->
                                                 </div>
@@ -109,11 +152,11 @@
                                                     <!--end::Label-->
                                                     <!--begin::Col-->
                                                     <div class="col-lg-8 fv-row">
-                                                        <select class="form-select form-select-solid" name="guardname"
+                                                        <select class="form-select form-select-solid" name="guard_name"
                                                             data-control="select2" data-placeholder="Select a Guard">
                                                             <option></option>
-                                                            <option value="id"> Web </option>
-                                                            <option value="id"> Mobile </option>
+                                                            <option value="web"> Web </option>
+                                                            <option value="mobile"> Mobile </option>
                                                         </select>
                                                     </div>
                                                     <!--end::Col-->

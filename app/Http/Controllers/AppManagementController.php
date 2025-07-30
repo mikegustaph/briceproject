@@ -77,11 +77,19 @@ class AppManagementController extends Controller
     }
     public function DisclosureEditStore(Request $request, $id)
     {
-        $discloedit = Disclosure::find($id);
-        $discloedit->title        =  $request->name;
-        $discloedit->description  =  $request->description;
-        $discloedit->update();
-        return view('pages.disclosure_edit');
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+        ]);
+        $disclosure = Disclosure::find($id);
+        if ($disclosure) {
+            // Update the disclosure's properties
+            $disclosure->title = $request->name;
+            $disclosure->description = $request->description;
+            $disclosure->update();
+            return redirect()->back()->with('success', 'Disclosure updated successfully!');
+        }
+        return redirect()->back()->with('error', 'Disclosure not found.');
     }
     public function DisclosureDelete($id)
     {
@@ -201,28 +209,38 @@ class AppManagementController extends Controller
 
     public function Support()
     {
-        return view('pages.support');
+        $support = Support::all();
+        return view('pages.support', compact('support'));
     }
     public function SupportCreate()
     {
         return view('pages.support_create');
     }
-    public function SupportCreateStore(Request $request, $id)
+    public function SupportCreateStore(Request $request)
     {
-        $support = Support::find($id);
-        $support->title       = $request->name;
-        $support->description = $request->description;
-        return redirect()->back()->with('success', 'Successfully, FAQ was deleted!');
+        $support   =  new Support();
+        $support->support_phone    = $request->supportPhone;
+        $support->support_email    = $request->supportEmail;
+        $support->save();
+        return redirect()->back()->with('success', 'Successfully, Support was deleted!');
     }
-    public function SupportEdit()
+    public function SupportEdit($id)
     {
-        return view('pages.support_edit');
+        $supportedt  = Support::findOrFail($id);
+        return view('pages.support_edit', compact('supportedt'));
     }
     public function SupportEditStore(Request $request, $id)
     {
-        $support = Support::find($id);
-        $support->title       = $request->name;
-        $support->description = $request->description;
-        return redirect()->back()->with('success', 'Successfully, Support was deleted!');
+        $support  = Support::findOrFail($id);
+        $support->support_phone   = $request->supportPhone;
+        $support->support_email   = $request->supportEmail;
+        $support->update();
+        return redirect()->back()->with('message', 'Successfully, Support was edited!');
+    }
+    public function SupportDelete($id)
+    {
+        $supportedt  = Support::findOrFail($id);
+        $supportedt->delete();
+        return redirect()->back()->with('me', 'Successfully, Support was deleted!');
     }
 }

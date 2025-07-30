@@ -12,6 +12,13 @@
                 background-image: url('assets/media/auth/bg4-dark.jpg');
             }
         </style>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    @endforeach
+                </ul>
+        @endif
         <!--end::Page bg image-->
         <!--begin::Authentication - Sign-in -->
         <div class="d-flex flex-column flex-column-fluid flex-lg-row">
@@ -21,11 +28,11 @@
                 <div class="d-flex flex-center flex-lg-start flex-column">
                     <!--begin::Logo-->
                     <a href="index.html" class="mb-7">
-                        <img alt="Logo" src="assets/media/logos/custom-3.svg" />
+                        <img alt="Logo" src="assets/media/logos/app-icon-web.png" width="100%" height="89px" />
                     </a>
                     <!--end::Logo-->
                     <!--begin::Title-->
-                    <h2 class="text-white fw-normal m-0">Branding tools designed for your business</h2>
+                    <h2 class="text-white fw-normal m-0">"Building Financial Independence Together"</h2>
                     <!--end::Title-->
                 </div>
                 <!--begin::Aside-->
@@ -39,15 +46,16 @@
                     <!--begin::Wrapper-->
                     <div class="d-flex flex-center flex-column flex-column-fluid px-lg-10 pb-15 pb-lg-20">
                         <!--begin::Form-->
-                        <form action="#" class="form w-100" novalidate="novalidate" id="kt_sign_in_form"
-                            data-kt-redirect-url="{{ url('/dashboard') }}">
+                        <form method="POST" action="{{ route('auth.login') }}" class="form w-100" id=""
+                            enctype="multipart/form-data">
+                            @csrf
                             <!--begin::Heading-->
                             <div class="text-center mb-11">
                                 <!--begin::Title-->
                                 <h1 class="text-gray-900 fw-bolder mb-3">Sign In</h1>
                                 <!--end::Title-->
                                 <!--begin::Subtitle-->
-                                <div class="text-gray-500 fw-semibold fs-6">Your System Account</div>
+                                <div class="text-gray-500 fw-semibold fs-6">Brice Finance's Fastpesa Admin System</div>
                                 <!--end::Subtitle=-->
                             </div>
                             <!--begin::Heading-->
@@ -60,8 +68,11 @@
                             <!--begin::Input group=-->
                             <div class="fv-row mb-8">
                                 <!--begin::Email-->
-                                <input type="text" placeholder="Email" name="email" autocomplete="off"
-                                    class="form-control bg-transparent" />
+                                <input type="text" placeholder="Email" value="{{ old('email') }}" name="email"
+                                    autocomplete="off" class="form-control bg-transparent" autofocus />
+                                @error('email')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                                 <!--end::Email-->
                             </div>
                             <!--end::Input group=-->
@@ -69,6 +80,10 @@
                                 <!--begin::Password-->
                                 <input type="password" placeholder="Password" name="password" autocomplete="off"
                                     class="form-control bg-transparent" />
+                                @error('password')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+
                                 <!--end::Password-->
                             </div>
                             <!--end::Input group=-->
@@ -76,20 +91,16 @@
                             <div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">
                                 <div></div>
                                 <!--begin::Link-->
-                                <a href="{{ url('/forgot-password') }}" class="link-primary">Forgot
+                                <a href="{{ URL::to('forgot-password') }}" class="link-primary">Forgot
                                     Password ?</a>
                                 <!--end::Link-->
                             </div>
                             <!--end::Wrapper-->
                             <!--begin::Submit button-->
                             <div class="d-grid mb-10">
-                                <button type="submit" id="kt_sign_in_submit" class="btn btn-primary">
+                                <button type="submit" id="" class="btn btn-primary">
                                     <!--begin::Indicator label-->
                                     <span class="indicator-label">Sign In</span>
-                                    <!--end::Indicator label-->
-                                    <!--begin::Indicator progress-->
-                                    <span class="indicator-progress">Please wait...
-                                        <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                                     <!--end::Indicator progress-->
                                 </button>
                             </div>

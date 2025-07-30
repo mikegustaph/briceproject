@@ -106,6 +106,7 @@ class OtpController extends Controller
             throw new \Exception('Failed to send OTP: ' . $response->body());
         }*/
     }
+
     public function testOtp(Request $request)
     {
         $phoneNumber = $request->input('phone_number');

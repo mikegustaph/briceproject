@@ -5,10 +5,10 @@
     <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
         <!--begin::Logo image-->
         <a href="index.html">
-            <img alt="Logo" src="{{ url('assets/media/logos/default-dark.svg') }}"
-                class="h-25px app-sidebar-logo-default" />
-            <img alt="Logo" src="{{ url('assets/media/logos/default-small.svg') }}"
-                class="h-20px app-sidebar-logo-minimize" />
+            <img alt="Logo" src="{{ url('assets/media/logos/default-dark-1.svg') }}"
+                class="h-40px app-sidebar-logo-default" />
+            <img alt="Logo" src="{{ url('assets/media/logos/default-small-1.svg') }}"
+                class="h-40px app-sidebar-logo-minimize" />
         </a>
         <!--end::Logo image-->
         <!--begin::Sidebar toggle-->
@@ -48,7 +48,7 @@
                     <!--begin:Menu item-->
                     <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
                         <!--begin:Menu link-->
-                        <span class="menu-link">
+                        <a class="menu-link" href="{{ URL::to('/dashboard') }}">
                             <span class="menu-icon">
                                 <i class="ki-duotone ki-element-11 fs-2">
                                     <span class="path1"></span>
@@ -58,7 +58,7 @@
                                 </i>
                             </span>
                             <span class="menu-title">Dashboard</span>
-                        </span>
+                        </a>
                     </div>
                     <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                         <!--begin:Menu link-->
@@ -98,6 +98,17 @@
                                 </a>
                                 <!--end:Menu link-->
                             </div>
+                            <!--begin:Menu item-->
+                            <div class="menu-item">
+                                <!--begin:Menu link-->
+                                <a class="menu-link" href="{{ URL::to('/repayments') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">Loan Repayments</span>
+                                </a>
+                                <!--end:Menu link-->
+                            </div>
                             <!--end:Menu item-->
                             <!--begin:Menu item-->
                             <div class="menu-item">
@@ -106,19 +117,42 @@
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
-                                    <span class="menu-title">Transactions</span>
+                                    <span class="menu-title">Transfer Transactions</span>
                                 </a>
                                 <!--end:Menu link-->
                             </div>
+
                             <!--end:Menu item-->
-                            <!--begin:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
+                                <a class="menu-link" href="{{ URL::to('/collect_transactions') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">Collect Transactions</span>
+                                </a>
+                                <!--end:Menu link-->
+                            </div>
+                            <!--
+                            <div class="menu-item">
+
                                 <a class="menu-link" href="{{ URL::to('/borrow-history') }}">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
                                     <span class="menu-title">Borrow History</span>
+                                </a>
+
+                            </div>-->
+                            <!--end:Menu item-->
+                            <!--begin:Menu item-->
+                            <div class="menu-item">
+                                <!--begin:Menu link-->
+                                <a class="menu-link" href="{{ URL::to('/loan-collection-group') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">Loan Group</span>
                                 </a>
                                 <!--end:Menu link-->
                             </div>
@@ -126,7 +160,7 @@
                         </div>
                         <!--end:Menu sub-->
                     </div>
-                    <!--Menu item Track managements-->
+                    <!--Menu item Task Management-->
                     <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                         <!--begin:Menu link-->
                         <span class="menu-link">
@@ -189,7 +223,66 @@
                         </div>
                         <!--end:Menu sub-->
                     </div>
-                    <!--Menu item Stock Management-->
+                    <!--Menu item Task Management-->
+                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        <!--begin:Menu link-->
+                        <span class="menu-link">
+                            <span class="menu-icon">
+                                <i class="ki-duotone ki-element-plus fs-2">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                    <span class="path3"></span>
+                                    <span class="path4"></span>
+                                    <span class="path5"></span>
+                                </i>
+                            </span>
+                            <span class="menu-title">Accounting </span>
+                            <span class="menu-arrow"></span>
+                        </span>
+                        <!--end:Menu link-->
+                        <!--begin:Menu sub-->
+                        <div class="menu-sub menu-sub-accordion">
+                            <!--begin:Menu item-->
+                            <div class="menu-item">
+                                <!--begin:Menu link-->
+                                <a class="menu-link" href="{{ URL::to('/company-income') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">Income</span>
+                                </a>
+                                <!--end:Menu link-->
+                            </div>
+                            <!--end:Menu item-->
+                            <!--begin:Menu item-->
+                            <div class="menu-item">
+                                <!--begin:Menu link-->
+                                <a class="menu-link" href="{{ URL::to('/company-expenses') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">Expenses</span>
+                                </a>
+                                <!--end:Menu link-->
+                            </div>
+                            <!--end:Menu item-->
+                            <!--begin:Menu item-->
+                            <div class="menu-item">
+                                <!--begin:Menu link-->
+                                <a class="menu-link" href="{{ URL::to('/company-target') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">Target</span>
+                                </a>
+                                <!--end:Menu link-->
+                            </div>
+                            <!--end:Menu item-->
+
+                        </div>
+                        <!--end:Menu sub-->
+                    </div>
+                    <!--Menu item Marketing-->
                     <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                         <!--begin:Menu link-->
                         <span class="menu-link">
@@ -331,6 +424,17 @@
                                 <!--end:Menu link-->
                             </div>
                             <!--end:Menu item-->
+                            <!--begin:Menu item-->
+                            <div class="menu-item">
+                                <!--begin:Menu link-->
+                                <a class="menu-link" href="{{ URL::to('user-logs') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">User Logs</span>
+                                </a>
+                                <!--end:Menu link-->
+                            </div>
                         </div>
                         <!--end:Menu sub-->
                     </div>
@@ -437,7 +541,7 @@
                                     +
                                 </i>
                             </span>
-                            <span class="menu-title">Setting</span>
+                            <span class="menu-title">Settings</span>
                             <span class="menu-arrow"></span>
                         </span>
                         <!--end:Menu link-->
@@ -450,11 +554,12 @@
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
-                                    <span class="menu-title">Setting</span>
+                                    <span class="menu-title">General Settings</span>
                                 </a>
                                 <!--end:Menu link-->
                             </div>
                             <!--end:Menu item-->
+
                             <!--begin:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
@@ -522,6 +627,16 @@
                                 <!--end:Menu link-->
                             </div>
                             <!--end:Menu item-->
+                            <div class="menu-item">
+                                <!--begin:Menu link-->
+                                <a class="menu-link" href="{{ URL::to('npl-report') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">NPL Report</span>
+                                </a>
+                                <!--end:Menu link-->
+                            </div>
                         </div>
                         <!--end:Menu sub-->
                     </div>

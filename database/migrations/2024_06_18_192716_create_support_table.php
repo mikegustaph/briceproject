@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('support', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 125);
-            $table->string('description', 225);
+            $table->string('support_phone', 65);
+            $table->string('support_email', 65);
             $table->timestamps();
         });
     }

@@ -18,20 +18,32 @@ class Customer extends Model
         'middle_name',
         'last_name',
         'sex',
-        'Date_of_birth',
         'phone',
         'email',
         'nida_number',
-        'region',
-        'address',
-        'current_location',
-        'Education',
-        'Marital_status',
+        'Occupation',
         'Address',
-        'district',
+        'District',
         'Region',
-        'Exist_loan',
         'customer_image',
-        'customer_id_card'
+        'customer_id_card',
+        'referee_one_name',
+        'referee_one_phone',
+        'referee_two_name',
+        'referee_two_phone',
+        'status'
     ];
+    public function loans()
+    {
+        return $this->hasMany(Loan::class);
+    }
+    public function loanHistories()
+    {
+        return $this->hasManyThrough(LoanHistory::class, Loan::class);
+    }
+
+    public function updateCreditScore()
+    {
+        // Logic to update user's credit score based on repayment history
+    }
 }

@@ -17,6 +17,8 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'favicon' => env('APP_FAVICON', '/favicon.ico'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -212,6 +214,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'BeemSMS' => App\Facades\BeemSMS::class
     ])->toArray(),
 
 ];

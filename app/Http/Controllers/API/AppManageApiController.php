@@ -1,35 +1,106 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\AboutUs;
+use App\Models\Disclosure;
+use App\Models\Faq;
+use App\Models\PrivacyPolicy;
+use App\Models\Support;
+use App\Models\WhyChooseUs;
 use Illuminate\Http\Request;
 
 class AppManageApiController extends Controller
 {
     public function privacyPolicy()
     {
-        $policydata = [3, 2, 1, 5, 6];
-        return response()->json(['policydata' => $policydata],);
+        try {
+            $privacy = PrivacyPolicy::first();
+            return response()->json([
+                'status' => 200,
+                'data' => $privacy
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => $e->getMessage(),
+            ], 500);
+        }
     }
     public function Disclosure()
     {
-        return true;
+        try {
+            $disclosure = Disclosure::first();
+            return response()->json([
+                'status' => 200,
+                'data' => $disclosure
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => $e->getMessage(),
+            ], 500);
+        }
     }
     public function whyChooseus()
     {
-        return true;
+        try {
+            $whychoose = WhyChooseUs::first();
+            return response()->json([
+                'status' => 200,
+                'data' => $whychoose
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => $e->getMessage(),
+            ], 500);
+        }
     }
     public function Faq()
     {
-        return true;
+        try {
+            $faq = Faq::first();
+            return response()->json([
+                'status' => 200,
+                'data' => $faq
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => $e->getMessage(),
+            ], 500);
+        }
     }
     public function AboutUs()
     {
-        return true;
+        try {
+            $about = AboutUs::first();
+            return response()->json([
+                'status' => 200,
+                'data' => $about
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => $e->getMessage(),
+            ], 500);
+        }
     }
     public function Support()
     {
-        return true;
+        try {
+            $support = Support::all();
+            return response()->json([
+                'status' => 200,
+                'data' => $support
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => $e->getMessage(),
+            ], 500);
+        }
     }
 }

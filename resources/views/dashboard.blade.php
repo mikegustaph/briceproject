@@ -4,7 +4,7 @@
 
 <head>
     <base href="../" />
-    <title inertia>{{ config('app.name', 'Laravel') }}</title>
+    <title inertia>{{ config('app.name') }}</title>
     <meta charset="utf-8" />
     <meta name="description" content="The most advanced Bootstrap 5 Admin with unique prebuilt layouts." />
     <meta name="keywords" content="Loan Web Admin, bootstrap 5" />
@@ -15,7 +15,7 @@
     <meta property="og:url" content="https://cloudfan.co.tz/" />
     <meta property="og:site_name" content="Loan Web App by Cloudfan" />
     <link rel="canonical" href="https://cloudfan.co.tz/" />
-    <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+    <link rel="shortcut icon" href="{{ asset('assets/media/logos/web-fac.png') }}" />
     <!--begin::Fonts(mandatory for all pages)-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
     <!--end::Fonts-->

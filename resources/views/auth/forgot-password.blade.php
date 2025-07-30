@@ -21,17 +21,25 @@
                 <div class="d-flex flex-center flex-lg-start flex-column">
                     <!--begin::Logo-->
                     <a href="index.html" class="mb-7">
-                        <img alt="Logo" src="assets/media/logos/custom-3.svg" />
+                        <img alt="Logo" src="assets/media/logos/app-icon-web.png" width="100%" height="89px" />
                     </a>
                     <!--end::Logo-->
                     <!--begin::Title-->
-                    <h2 class="text-white fw-normal m-0">Branding tools designed for your business</h2>
+                    <h2 class="text-white fw-normal m-0">"Building Financial Independence Together"</h2>
                     <!--end::Title-->
                 </div>
                 <!--begin::Aside-->
             </div>
             <!--begin::Aside-->
             <!--begin::Body-->
+            @error($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        @endforeach
+                    </ul>
+                </div>
+            @enderror
             <div
                 class="d-flex flex-column-fluid flex-lg-row-auto justify-content-center justify-content-lg-end p-12 p-lg-20">
                 <!--begin::Card-->
@@ -39,8 +47,9 @@
                     <!--begin::Wrapper-->
                     <div class="d-flex flex-center flex-column flex-column-fluid px-lg-10 pb-15 pb-lg-20">
                         <!--begin::Form-->
-                        <form class="form w-100" novalidate="novalidate" id="kt_password_reset_form"
-                            data-kt-redirect-url="authentication/layouts/creative/new-password.html" action="#">
+                        <form class="form w-100" method="POST" action="{{ route('auth.send-link') }}"
+                            enctype="multipart/form-data">
+                            @csrf
                             <!--begin::Heading-->
                             <div class="text-center mb-10">
                                 <!--begin::Title-->
@@ -56,18 +65,15 @@
                                 <!--begin::Email-->
                                 <input type="text" placeholder="Email" name="email" autocomplete="off"
                                     class="form-control bg-transparent" />
+                                @error('email')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                                 <!--end::Email-->
                             </div>
                             <!--begin::Actions-->
                             <div class="d-flex flex-wrap justify-content-center pb-lg-0">
-                                <button type="button" id="kt_password_reset_submit" class="btn btn-primary me-4">
-                                    <!--begin::Indicator label-->
-                                    <span class="indicator-label">Submit</span>
-                                    <!--end::Indicator label-->
-                                    <!--begin::Indicator progress-->
-                                    <span class="indicator-progress">Please wait...
-                                        <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                                    <!--end::Indicator progress-->
+                                <button type="submt" class="btn btn-primary me-4">
+                                    <span class="indicator-label">Send Link</span>
                                 </button>
                                 <a href="{{ URL::to('login') }}" class="btn btn-light">Cancel</a>
                             </div>
@@ -109,31 +115,9 @@
                                     <a href="#" class="menu-link d-flex px-5" data-kt-lang="Spanish">
                                         <span class="symbol symbol-20px me-4">
                                             <img data-kt-element="lang-flag" class="rounded-1"
-                                                src="assets/media/flags/spain.svg" alt="" />
+                                                src="assets/media/flags/tanzania.svg" alt="" />
                                         </span>
-                                        <span data-kt-element="lang-name">Spanish</span>
-                                    </a>
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <a href="#" class="menu-link d-flex px-5" data-kt-lang="German">
-                                        <span class="symbol symbol-20px me-4">
-                                            <img data-kt-element="lang-flag" class="rounded-1"
-                                                src="{{ url('assets/media/flags/germany.svg') }}" alt="" />
-                                        </span>
-                                        <span data-kt-element="lang-name">German</span>
-                                    </a>
-                                </div>
-                                <!--end::Menu item-->
-
-                                <div class="menu-item px-3">
-                                    <a href="#" class="menu-link d-flex px-5" data-kt-lang="French">
-                                        <span class="symbol symbol-20px me-4">
-                                            <img data-kt-element="lang-flag" class="rounded-1"
-                                                src="{{ url('assets/media/flags/france.svg') }}" alt="" />
-                                        </span>
-                                        <span data-kt-element="lang-name">French</span>
+                                        <span data-kt-element="lang-name">Kiswahili</span>
                                     </a>
                                 </div>
                                 <!--end::Menu item-->

@@ -2,17 +2,50 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LoanSetting;
+use App\Models\LoginLog;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
+
+use function PHPUnit\Framework\isEmpty;
 
 class SettingController extends Controller
 {
     public function Setting()
     {
-        return view('pages.setting');
+        $loansetting = LoanSetting::first();
+        return view('pages.setting', compact('loansetting'));
+    }
+    public function loanSettingStore(Request $request, $id)
+    {
+        $loansetting = LoanSetting::find($id);
+        $periods = $request->input('period');
+        $periodString = implode(',', $periods);
+        if (is_null($loansetting)) {
+            return redirect()->back()->with('message', 'Data does not exist!');
+        } else {
+
+            $loansetting->interest_rate = $request->interest;
+            $loansetting->service_charge = $request->service_charge;
+            $loansetting->periods = $periodString;
+            $loansetting->update();
+            return redirect()->back()->with('message', 'Successfully saved Loan Setting');
+        }
+    }
+    public function  profileSetting()
+    {
+        return view('pages.profile');
     }
 
+    public function profileView(Request $request)
+    {
+        $userdata = User::find(auth()->user()->id);
+        return view('pages.profile', compact('userdata'));
+    }
+
+    public function  profileSettingStore(Request $request) {}
     public function ChangePermissionIndex($id)
     {
         $role = Role::find($id);
@@ -20,15 +53,20 @@ class SettingController extends Controller
         $all_permission = $perm->pluck('name')->toArray();
 
         if (!empty($all_permission)) {
-            return view('pages.change_permission', compact('all_permission', 'role'));
+            return view('pages.permission_list', compact('all_permission', 'role'));
         } else {
-            return view('pages.change_permission', compact('all_permission', 'role'));
+            return view('pages.permission_list', compact('all_permission', 'role'));
         }
     }
-    public function  profileSetting()
+    public function savePushNotification(Request $request) {}
+
+    public function UserLogsIndex()
     {
-        return view('pages.profile');
+        $userlogs = LoginLog::all();
+        //return response()->json($userlogs);
+        return view('pages.user_logs', compact('userlogs'));
     }
+
     public function ChangePermissionStore(Request $request)
     {
         $role = $request->role_id;

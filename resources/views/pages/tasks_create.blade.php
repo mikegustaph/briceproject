@@ -17,7 +17,7 @@
                     <!--begin::Content wrapper-->
                     <div class="d-flex flex-column flex-column-fluid">
                         <!--begin::Toolbar-->
-                        <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+                        <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-4">
                             <!--begin::Toolbar container-->
                             <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
                                 <!--begin::Page title-->
@@ -31,7 +31,8 @@
                                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                         <!--begin::Item-->
                                         <li class="breadcrumb-item text-muted">
-                                            <a href="index.html" class="text-muted text-hover-primary">Home</a>
+                                            <a href="{{ URL::to('/dashboard') }}"
+                                                class="text-muted text-hover-primary">Home</a>
                                         </li>
                                         <!--end::Item-->
                                         <!--begin::Item-->
@@ -49,23 +50,46 @@
                                     </ul>
                                     <!--end::Breadcrumb-->
                                 </div>
-                                <div style="background-color: rgb(67, 67, 67);"
-                                    class="page-title d-flex flex-column flex-wrap me-3">
-                                    @if (session('success'))
-                                        <div id="flash-message" class="alert alert-fill-success alert-dismissible"
-                                            role="alert">
-                                            {{ session('success') }}
+                                @if (session('status') === 'success' || session('status') === 'error')
+                                    <div
+                                        class="alert alert-{{ session('status') === 'success' ? 'success' : 'danger' }} d-flex align-items-center p-5">
+                                        <i
+                                            class="ki-duotone ki-shield-tick fs-2hx text-{{ session('status') === 'success' ? 'success' : 'danger' }} me-4">
+                                            <span class="path1"></span><span class="path2"></span>
+                                        </i>
+                                        <div class="d-flex flex-column">
+                                            <h4 class="mb-1">{{ session('status') === 'success' ? 'Success' : 'Error' }}
+                                            </h4>
+                                            <span>{{ session('message') }}</span>
                                         </div>
-                                        <script>
-                                            $(document).ready(function() {
-                                                setTimeout(function() {
-                                                    $('#flash-message').fadeOut('slow');
-                                                    $('#error-message').fadeOut('slow');
-                                                }, 5000); // Adjust the timeout value (in milliseconds) as needed
-                                            });
-                                        </script>
-                                    @endif
-                                </div>
+                                    </div>
+                                @endif
+
+                                @if ($errors->any())
+                                    <div class="alert alert-danger d-flex align-items-center p-5">
+                                        <i class="ki-duotone ki-shield-tick fs-2hx text-danger me-4">
+                                            <span class="path1"></span><span class="path2"></span>
+                                        </i>
+                                        <div>
+                                            <h4 class="mb-1 text-danger">Validation Errors</h4>
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    </div>
+                                @endif
+
+                                @push('scripts')
+                                    <script type="text/javascript">
+                                        $(document).ready(function() {
+                                            setTimeout(function() {
+                                                $('.alert').fadeOut('slow');
+                                            }, 5000);
+                                        });
+                                    </script>
+                                @endpush
                                 <!--end::Page title-->
                                 <!--begin::Action-->
                             </div>
@@ -83,7 +107,7 @@
                                     <div id="kt_account_settings_profile_details" class="collapse show">
                                         <!--begin::Form-->
                                         <form id="kt_account_profile_details_form" class="form" method="POST"
-                                            action="{{ url('/privacy-policy') }}">
+                                            action="{{ url('/task-create') }}">
                                             @csrf
                                             <!--begin::Card body-->
                                             <div class="card-body p-9">
@@ -93,7 +117,7 @@
                                                     <label class="col-lg-4 col-form-label fw-semibold fs-6">
                                                         <span class="required">Task Name</span>
                                                         <span class="ms-1" data-bs-toggle="tooltip"
-                                                            title="Define role name">
+                                                            title="Define task name">
                                                             <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
                                                                 <span class="path1"></span>
                                                                 <span class="path2"></span>
@@ -104,9 +128,9 @@
                                                     <!--end::Label-->
                                                     <!--begin::Col-->
                                                     <div class="col-lg-8 fv-row">
-                                                        <input type="text" name="name"
+                                                        <input type="text" name="task_name"
                                                             class="form-control form-control-lg form-control-solid"
-                                                            placeholder="Taks Name" required />
+                                                            placeholder="Task Name" required />
                                                     </div>
                                                     <!--end::Col-->
                                                 </div>
@@ -115,25 +139,22 @@
                                                     <!--begin::Label-->
                                                     <label class="col-lg-4 col-form-label fw-semibold fs-6">
                                                         <span class="required">Staff Name</span>
-                                                        <span class="ms-1" data-bs-toggle="tooltip"
-                                                            title="Define role name">
-                                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
-                                                                <span class="path1"></span>
-                                                                <span class="path2"></span>
-                                                                <span class="path3"></span>
-                                                            </i>
-                                                        </span>
+
                                                     </label>
                                                     <!--end::Label-->
                                                     <!--begin::Col-->
                                                     <div class="col-lg-8 fv-row">
-                                                        <input type="text" name="username"
-                                                            class="form-control form-control-lg form-control-solid"
-                                                            placeholder="Staff Name" required />
+                                                        <select class="form-select form-select-solid" name="staffname"
+                                                            data-control="select2" data-placeholder="Select a Staff">
+                                                            <option></option>
+                                                            @foreach ($staffs as $staff)
+                                                                <option value="{{ $staff->id }}">{{ $staff->username }}
+                                                                </option>
+                                                            @endforeach
+                                                        </select>
                                                     </div>
                                                     <!--end::Col-->
                                                 </div>
-                                                <!--end::Input group-->
 
                                                 <!--begin::Input group-->
                                                 <div class="row mb-6">
@@ -152,7 +173,8 @@
                                                     <!--end::Label-->
                                                     <!--begin::Col-->
                                                     <div class="col-lg-8 fv-row">
-                                                        <textarea type="text" name="description" class="form-control form-control-lg form-control-solid" placeholder="Note"></textarea>
+                                                        <textarea type="text" name="description" class="form-control form-control-lg form-control-solid" placeholder="Note"
+                                                            required></textarea>
                                                     </div>
                                                     <!--end::Col-->
                                                 </div>

@@ -50,6 +50,46 @@
                                     <!--end::Breadcrumb-->
                                 </div>
                                 <!--end::Page title-->
+                                <!--begin::Alert-->
+                                @if (session('status') === 'success')
+                                    <div class="alert alert-success d-flex align-items-center p-5">
+                                        <!--begin::Icon-->
+                                        <i class="ki-duotone ki-shield-tick fs-2hx text-success me-4"><span
+                                                class="path1"></span><span class="path2"></span></i>
+                                        <div class="d-flex flex-column">
+                                            <h4 class="mb-1 light">Success</h4>
+                                            <span>{{ session('message') }}</span>
+                                            <!--end::Content-->
+                                        </div>
+                                    </div>
+                                @elseif (session('status') === 'error')
+                                    <div class="alert alert-danger d-flex align-items-center p-5">
+                                        <i class="ki-duotone ki-shield-tick fs-2hx text-danger me-4"><span
+                                                class="path1"></span><span class="path2"></span></i>
+                                        <div class="d-flex flex-column">
+                                            <h4 class="mb-1 text-rose-600">Error</h4>
+                                            <span>{{ session('message') }}</span>
+                                        </div>
+                                    </div>
+                                @endif
+
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+
+                                <script type="text/javascript">
+                                    $(document).ready(function() {
+                                        setTimeout(function() {
+                                            $('.alert').fadeOut('slow');
+                                        }, 5000);
+                                    });
+                                </script>
 
                             </div>
                             <!--end::Toolbar container-->
@@ -66,7 +106,9 @@
                                     <!--begin::Content-->
                                     <div id="kt_account_settings_profile_details" class="collapse show">
                                         <!--begin::Form-->
-                                        <form id="kt_account_profile_details_form" class="form" method="POST">
+                                        <form id="kt_account_profile_details_form" action="{{ route('pages.userCreate') }}"
+                                            class="form" method="POST" enctype="multipart/form-data">
+                                            @csrf
                                             <!--begin::Card body-->
                                             <div class="card-body p-9">
                                                 <!--begin::Input group-->
@@ -144,16 +186,16 @@
                                                         <div class="row">
                                                             <!--begin::Col-->
                                                             <div class="col-lg-6 fv-row">
-                                                                <input type="text" name="fname"
+                                                                <input type="text" name="first_name"
                                                                     class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                                                                    placeholder="First name" value="Max" />
+                                                                    placeholder="First name" />
                                                             </div>
                                                             <!--end::Col-->
                                                             <!--begin::Col-->
                                                             <div class="col-lg-6 fv-row">
-                                                                <input type="text" name="lname"
+                                                                <input type="text" name="last_name"
                                                                     class="form-control form-control-lg form-control-solid"
-                                                                    placeholder="Last name" value="Smith" />
+                                                                    placeholder="Last name" />
                                                             </div>
                                                             <!--end::Col-->
                                                         </div>
@@ -182,7 +224,7 @@
                                                     <div class="col-lg-8 fv-row">
                                                         <input type="tel" name="phone"
                                                             class="form-control form-control-lg form-control-solid"
-                                                            placeholder="Phone number" value="044 3276 454 935" />
+                                                            placeholder="Phone number" />
                                                     </div>
                                                     <!--end::Col-->
                                                 </div>
@@ -204,9 +246,9 @@
                                                     <!--end::Label-->
                                                     <!--begin::Col-->
                                                     <div class="col-lg-8 fv-row">
-                                                        <input type="text" name="website"
+                                                        <input type="text" name="email"
                                                             class="form-control form-control-lg form-control-solid"
-                                                            placeholder="Email" value="admin@loanapp.com" />
+                                                            placeholder="Email" />
                                                     </div>
                                                     <!--end::Col-->
                                                 </div>
@@ -228,11 +270,11 @@
                                                     <!--end::Label-->
                                                     <!--begin::Col-->
                                                     <div class="col-lg-8 fv-row">
-                                                        <select class="form-select form-select-solid" name="user_gender"
+                                                        <select class="form-select form-select-solid" name="gender"
                                                             data-control="select2" data-placeholder="Select a Gender">
                                                             <option></option>
-                                                            <option value="id"> Male </option>
-                                                            <option value="id"> Female </option>
+                                                            <option value="male"> Male </option>
+                                                            <option value="female"> Female </option>
                                                         </select>
                                                     </div>
                                                     <!--end::Col-->
@@ -264,7 +306,7 @@
                                                                 <span class="path6"></span>
                                                             </i>
                                                             <input class="form-control form-control-solid ps-12"
-                                                                name="date" placeholder="Pick a Date"
+                                                                name="birthday" placeholder="Pick a Date"
                                                                 id="kt_datepicker_1" />
                                                         </div>
                                                     </div>
@@ -301,8 +343,9 @@
                                                             data-control="select2" data-placeholder="Select a position.."
                                                             class="form-select form-select-solid form-select-lg">
                                                             <option value="">Select a Position..</option>
-                                                            <option value="Admin">Loan Officer</option>
-                                                            <option value="Staff">Secretary</option>
+                                                            <option value="Admin">Admin</option>
+                                                            <option value="Loan Officer">Loan Officer</option>
+                                                            <option value="Secretary">Secretary</option>
                                                         </select>
                                                     </div>
                                                     <!--end::Col-->
@@ -327,7 +370,7 @@
                                                     <div class="col-lg-8 fv-row">
                                                         <input type="file" name="cv"
                                                             class="form-control form-control-lg form-control-solid"
-                                                            placeholder="cv" value="" />
+                                                            placeholder="cv" />
                                                     </div>
                                                     <!--end::Col-->
                                                 </div>
@@ -351,7 +394,7 @@
                                                     <div class="col-lg-8 fv-row">
                                                         <input type="text" name="address"
                                                             class="form-control form-control-lg form-control-solid"
-                                                            placeholder="Address" value="34 West Upanga" />
+                                                            placeholder="Address" />
                                                     </div>
                                                     <!--end::Col-->
                                                 </div>
@@ -365,9 +408,9 @@
                                                     <!--end::Label-->
                                                     <!--begin::Col-->
                                                     <div class="col-lg-8 fv-row">
-                                                        <input type="text" name="company"
+                                                        <input type="text" name="username"
                                                             class="form-control form-control-lg form-control-solid"
-                                                            placeholder="Company name" value="Keenthemes" />
+                                                            placeholder="Username" />
                                                     </div>
                                                     <!--end::Col-->
                                                 </div>
@@ -389,9 +432,33 @@
                                                     <!--end::Label-->
                                                     <!--begin::Col-->
                                                     <div class="col-lg-8 fv-row">
-                                                        <input type="password" name="password"
+                                                        <input id="password" type="password" name="password"
                                                             class="form-control form-control-lg form-control-solid"
                                                             placeholder="********" value="" />
+                                                    </div>
+                                                    <!--end::Col-->
+                                                </div>
+                                                <div class="row mb-6">
+                                                    <!--begin::Label-->
+                                                    <label class="col-lg-4 col-form-label fw-semibold fs-6">
+                                                        <span class="required">Confirm Password</span>
+                                                        <span class="ms-1" data-bs-toggle="tooltip"
+                                                            title="Password must be more than 6 character">
+                                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                <span class="path1"></span>
+                                                                <span class="path2"></span>
+                                                                <span class="path3"></span>
+                                                            </i>
+                                                        </span>
+                                                    </label>
+                                                    <!--end::Label-->
+                                                    <!--begin::Col-->
+                                                    <div class="col-lg-8 fv-row">
+                                                        <input id="confirmPassword" type="password" name="password"
+                                                            class="form-control form-control-lg form-control-solid"
+                                                            placeholder="********" value="" />
+                                                        <span style="color:red;font-size:12px;" id="message"
+                                                            class="error"></span>
                                                     </div>
                                                     <!--end::Col-->
                                                 </div>
@@ -429,6 +496,29 @@
         </div>
         <!--end::Page-->
     </div>
+    <script type="text/javascript">
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirmPassword');
+        const message = document.getElementById('message');
+
+        function checkPasswordMatch() {
+            if (password.value !== confirmPassword.value) {
+                message.textContent = 'Passwords do not match!';
+            } else {
+                message.textContent = '';
+            }
+        }
+
+        password.addEventListener('input', checkPasswordMatch);
+        confirmPassword.addEventListener('input', checkPasswordMatch);
+
+        document.getElementById('passwordForm').addEventListener('submit', function(e) {
+            if (password.value !== confirmPassword.value) {
+                e.preventDefault();
+                alert('Passwords must match before submitting!');
+            }
+        });
+    </script>
     <!--end::App-->
     <!--begin::Drawers-->
     @include('widget.drawer')
